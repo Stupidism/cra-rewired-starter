@@ -7,36 +7,36 @@ export const SELECT_MENU_ITEM = 'SELECT_MENU_ITEM';
 export const menuItems = [
   {
     name: 'Current Status',
-    icon: 'clock-circle-o'
+    icon: 'clock-circle-o',
   },
   {
     name: 'Historical Data',
-    icon: 'calendar'
+    icon: 'calendar',
   },
   {
     name: 'Node List',
-    icon: 'bars'
+    icon: 'bars',
   },
   {
     name: 'Group List',
-    icon: 'api'
+    icon: 'api',
   },
   {
     name: 'Tag List',
-    icon: 'tags-o'
+    icon: 'tags-o',
   },
   {
     name: 'Settings',
-    icon: 'setting'
+    icon: 'setting',
   },
   {
     name: 'Sign Out',
-    icon: 'logout'
-  }
+    icon: 'logout',
+  },
 ];
 
 const defaultState = {
-  selected: 0
+  selected: 0,
 };
 
 // ------------------------------------
@@ -48,5 +48,5 @@ export const selectMenuItem = value => ({ type: SELECT_MENU_ITEM, value });
 // Reducers
 // ------------------------------------
 export default createReducer(defaultState, {
-  [SELECT_MENU_ITEM]: (state, { value }) => ({ selected: value })
+  [SELECT_MENU_ITEM]: (state, { value }) => ({ selected: value }),
 });

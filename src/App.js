@@ -11,12 +11,12 @@ const { Header, Sider, Content } = Layout;
 
 class SiderDemo extends Component {
   state = {
-    collapsed: false
+    collapsed: false,
   };
 
   toggle = () => {
     this.setState({
-      collapsed: !this.state.collapsed
+      collapsed: !this.state.collapsed,
     });
   };
 
@@ -58,7 +58,7 @@ class SiderDemo extends Component {
             margin: '24px 16px',
             padding: 24,
             background: '#fff',
-            minHeight: 280
+            minHeight: 280,
           }}
         >
           Content
@@ -69,15 +69,15 @@ class SiderDemo extends Component {
 }
 
 const mapStateToProps = state => ({
-  selectedMenuItem: menuItems[state.menuItems.selected]
+  selectedMenuItem: menuItems[state.menuItems.selected],
 });
 
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      onSelectMenuItem: ({ key }) => selectMenuItem(key)
+      onSelectMenuItem: ({ key }) => selectMenuItem(key),
     },
-    dispatch
+    dispatch,
   );
 
 export default connect(mapStateToProps, mapDispatchToProps)(SiderDemo);
