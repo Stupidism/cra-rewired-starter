@@ -1,5 +1,9 @@
 import React, { Component } from 'react';
 import { Layout, Menu, Icon } from 'antd';
+import { connect } from 'react-redux';
+import { bindActionCreators } from 'redux';
+
+import { menuItems, selectMenuItem } from './store/modules/menuItems';
 
 import './App.css';
 
@@ -25,7 +29,7 @@ class SiderDemo extends Component {
             type={this.state.collapsed ? 'menu-unfold' : 'menu-fold'}
             onClick={this.toggle}
           />
-          Current Status
+          {this.props.selectedMenuItem.name}
         </Header>
 
         <Sider
@@ -35,35 +39,18 @@ class SiderDemo extends Component {
           collapsedWidth={0}
           collapsed={this.state.collapsed}
         >
-          <Menu theme="dark" mode="inline" defaultSelectedKeys={['1']}>
-            <Menu.Item key="1">
-              <Icon type="clock-circle-o" />
-              <span>Current Status</span>
-            </Menu.Item>
-            <Menu.Item key="2">
-              <Icon type="calendar" />
-              <span>Historical Data</span>
-            </Menu.Item>
-            <Menu.Item key="3">
-              <Icon type="bars" />
-              <span>Node List</span>
-            </Menu.Item>
-            <Menu.Item key="4">
-              <Icon type="api" />
-              <span>Group List</span>
-            </Menu.Item>
-            <Menu.Item key="5">
-              <Icon type="tags-o" />
-              <span>Tag List</span>
-            </Menu.Item>
-            <Menu.Item key="6">
-              <Icon type="setting" />
-              <span>Settings</span>
-            </Menu.Item>
-            <Menu.Item key="7">
-              <Icon type="logout" />
-              <span>Sign Out</span>
-            </Menu.Item>
+          <Menu
+            theme="dark"
+            mode="inline"
+            defaultSelectedKeys={['0']}
+            onSelect={this.props.onSelectMenuItem}
+          >
+            {menuItems.map(({ name, icon }, index) => (
+              <Menu.Item key={index}>
+                <Icon type={icon} />
+                <span>{name}</span>
+              </Menu.Item>
+            ))}
           </Menu>
         </Sider>
         <Content
@@ -81,4 +68,16 @@ class SiderDemo extends Component {
   }
 }
 
-export default SiderDemo;
+const mapStateToProps = state => ({
+  selectedMenuItem: menuItems[state.menuItems.selected]
+});
+
+const mapDispatchToProps = dispatch =>
+  bindActionCreators(
+    {
+      onSelectMenuItem: ({ key }) => selectMenuItem(key)
+    },
+    dispatch
+  );
+
+export default connect(mapStateToProps, mapDispatchToProps)(SiderDemo);
