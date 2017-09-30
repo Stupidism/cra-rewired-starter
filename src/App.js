@@ -4,8 +4,8 @@ import { Layout, Menu, Icon } from 'antd';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
 
-import { selectMenuItem } from './store/modules/menuItems';
-import menuItems from './constants/menuItems';
+import { selectMenuItem } from 'store/modules/menuItems';
+import menuItems from 'constants/menuItems';
 
 import './App.css';
 
