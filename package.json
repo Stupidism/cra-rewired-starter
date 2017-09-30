@@ -4,6 +4,7 @@
   "private": true,
   "dependencies": {
     "antd": "^2.13.3",
+    "flow-bin": "^0.56.0",
     "husky": "^0.14.3",
     "lint-staged": "^4.2.3",
     "lodash": "^4.17.4",
@@ -23,6 +24,7 @@
     ]
   },
   "scripts": {
+    "flow": "flow",
     "precommit": "lint-staged",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
