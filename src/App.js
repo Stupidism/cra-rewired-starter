@@ -28,7 +28,7 @@ type State = {
 // ------------------------------------
 // Component
 // ------------------------------------
-class SiderDemo extends React.Component<Props, State> {
+export class App extends React.Component<Props, State> {
   state = {
     collapsed: false,
   };
@@ -105,4 +105,4 @@ const mapDispatchToProps = dispatch =>
     dispatch,
   );
 
-export default connect(mapStateToProps, mapDispatchToProps)(SiderDemo);
+export default connect(mapStateToProps, mapDispatchToProps)(App);
