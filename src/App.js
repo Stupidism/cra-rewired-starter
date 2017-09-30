@@ -1,4 +1,5 @@
-import React, { Component } from 'react';
+// @flow
+import * as React from 'react';
 import { Layout, Menu, Icon } from 'antd';
 import { connect } from 'react-redux';
 import { bindActionCreators } from 'redux';
@@ -9,7 +10,24 @@ import './App.css';
 
 const { Header, Sider, Content } = Layout;
 
-class SiderDemo extends Component {
+// ------------------------------------
+// Types
+// ------------------------------------
+type OnSelectMenuItem = ({ key: string }) => mixed;
+
+type Props = {
+  onSelectMenuItem: OnSelectMenuItem,
+  selectedMenuItem: { name: string, icon: string },
+};
+
+type State = {
+  collapsed: boolean,
+};
+
+// ------------------------------------
+// Component
+// ------------------------------------
+class SiderDemo extends React.Component<Props, State> {
   state = {
     collapsed: false,
   };
@@ -68,6 +86,12 @@ class SiderDemo extends Component {
   }
 }
 
+// ------------------------------------
+// Handlers
+// ------------------------------------
+const onSelectMenuItem: OnSelectMenuItem = ({ key }) =>
+  selectMenuItem(Number(key));
+
 const mapStateToProps = state => ({
   selectedMenuItem: menuItems[state.menuItems.selected],
 });
@@ -75,7 +99,7 @@ const mapStateToProps = state => ({
 const mapDispatchToProps = dispatch =>
   bindActionCreators(
     {
-      onSelectMenuItem: ({ key }) => selectMenuItem(key),
+      onSelectMenuItem,
     },
     dispatch,
   );

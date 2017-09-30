@@ -1,3 +1,5 @@
+// @flow
+
 import { createReducer } from 'redux-create-reducer';
 
 // ------------------------------------
@@ -35,18 +37,43 @@ export const menuItems = [
   },
 ];
 
-const defaultState = {
-  selected: 0,
+// ------------------------------------
+// Types
+// ------------------------------------
+type Action = {
+  type: 'SELECT_MENU_ITEM',
+  value: number,
+};
+
+type State = {
+  selected: number,
+};
+
+type ActionCreator<T> = T => Action;
+
+type Reducer = (State, Action) => State;
+
+type ReducersMap = {
+  SELECT_MENU_ITEM: Reducer,
 };
 
 // ------------------------------------
 // Actions
 // ------------------------------------
-export const selectMenuItem = value => ({ type: SELECT_MENU_ITEM, value });
+export const selectMenuItem: ActionCreator<number> = value => ({
+  type: SELECT_MENU_ITEM,
+  value,
+});
 
 // ------------------------------------
 // Reducers
 // ------------------------------------
-export default createReducer(defaultState, {
-  [SELECT_MENU_ITEM]: (state, { value }) => ({ selected: value }),
-});
+const defaultState: State = {
+  selected: 0,
+};
+
+const reducersMap: ReducersMap = {
+  [SELECT_MENU_ITEM]: (state, action) => ({ selected: action.value }),
+};
+
+export default createReducer(defaultState, reducersMap);
