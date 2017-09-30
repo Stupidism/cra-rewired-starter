@@ -6,36 +6,6 @@ import { createReducer } from 'redux-create-reducer';
 // Constants
 // ------------------------------------
 export const SELECT_MENU_ITEM = 'SELECT_MENU_ITEM';
-export const menuItems = [
-  {
-    name: 'Current Status',
-    icon: 'clock-circle-o',
-  },
-  {
-    name: 'Historical Data',
-    icon: 'calendar',
-  },
-  {
-    name: 'Node List',
-    icon: 'bars',
-  },
-  {
-    name: 'Group List',
-    icon: 'api',
-  },
-  {
-    name: 'Tag List',
-    icon: 'tags-o',
-  },
-  {
-    name: 'Settings',
-    icon: 'setting',
-  },
-  {
-    name: 'Sign Out',
-    icon: 'logout',
-  },
-];
 
 // ------------------------------------
 // Types
