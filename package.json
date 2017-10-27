@@ -24,7 +24,7 @@
     ]
   },
   "scripts": {
-    "flow": "flow",
+    "flow": "flow check",
     "precommit": "lint-staged && npm run flow",
     "prepush": "CI=true npm run test",
     "start": "react-app-rewired start",
