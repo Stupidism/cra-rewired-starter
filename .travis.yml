@@ -31,4 +31,4 @@ script:
   - npm run test
   - npm run build
 after_success:
-  - bash ./bin/deploy2AWSCloudFront.sh
+  - bash ./tools/deploy2AWSCloudFront.sh
