@@ -1,6 +1,7 @@
 [ignore]
 .*/node_modules/draft-js/lib/DraftEditor.react.js.flow
 .*/node_modules/rc-editor-core/node_modules/immutable/dist/immutable.js.flow
+.*/node_modules/jsonlint-lines-primitives
 [include]
 
 [libs]
