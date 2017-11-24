@@ -7,7 +7,7 @@ import { bindActionCreators } from 'redux';
 import { selectMenuItem } from 'store/modules/menuItems';
 import menuItems from 'constants/menuItems';
 
-import './App.css';
+import './App.less';
 
 const { Header, Sider, Content } = Layout;
 
@@ -55,7 +55,6 @@ export class App extends React.Component<Props, State> {
           className="sider"
           trigger={null}
           collapsible
-          collapsedWidth={0}
           collapsed={this.state.collapsed}
         >
           <Menu
