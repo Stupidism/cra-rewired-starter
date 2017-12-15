@@ -1,7 +1,7 @@
 import React from 'react';
 import ReactDOM from 'react-dom';
 import renderer from 'react-test-renderer';
-import { mount } from 'enzyme';
+import { mount, shallow } from 'enzyme';
 
 import menuItems from 'constants/menuItems';
 
@@ -25,6 +25,11 @@ describe('<App />', () => {
     const wrapper = mount(<App selectedMenuItem={menuItems[1]} />);
     wrapper.instance().toggle();
     wrapper.update();
+    expect(wrapper).toMatchSnapshot();
+  });
+
+  it('keeps child components unchanged', () => {
+    const wrapper = shallow(<App selectedMenuItem={menuItems[1]} />).until();
     expect(wrapper).toMatchSnapshot();
   });
 });

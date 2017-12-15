@@ -1,5 +1,129 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<App /> keeps child components unchanged 1`] = `
+<div
+  className="App ant-layout"
+>
+  <Adapter
+    className="header"
+  >
+    <Icon
+      className="trigger"
+      onClick={[Function]}
+      type="menu-fold"
+    />
+    Historical Data
+  </Adapter>
+  <Sider
+    className="sider"
+    collapsed={false}
+    collapsedWidth={80}
+    collapsible={true}
+    defaultCollapsed={false}
+    prefixCls="ant-layout-sider"
+    reverseArrow={false}
+    style={Object {}}
+    trigger={null}
+    width={200}
+  >
+    <Menu
+      className=""
+      defaultSelectedKeys={
+        Array [
+          "0",
+        ]
+      }
+      mode="inline"
+      prefixCls="ant-menu"
+      theme="dark"
+    >
+      <MenuItem
+        key="0"
+      >
+        <Icon
+          type="clock-circle-o"
+        />
+        <span>
+          Current Status
+        </span>
+      </MenuItem>
+      <MenuItem
+        key="1"
+      >
+        <Icon
+          type="calendar"
+        />
+        <span>
+          Historical Data
+        </span>
+      </MenuItem>
+      <MenuItem
+        key="2"
+      >
+        <Icon
+          type="bars"
+        />
+        <span>
+          Node List
+        </span>
+      </MenuItem>
+      <MenuItem
+        key="3"
+      >
+        <Icon
+          type="api"
+        />
+        <span>
+          Group List
+        </span>
+      </MenuItem>
+      <MenuItem
+        key="4"
+      >
+        <Icon
+          type="tags-o"
+        />
+        <span>
+          Tag List
+        </span>
+      </MenuItem>
+      <MenuItem
+        key="5"
+      >
+        <Icon
+          type="setting"
+        />
+        <span>
+          Settings
+        </span>
+      </MenuItem>
+      <MenuItem
+        key="6"
+      >
+        <Icon
+          type="logout"
+        />
+        <span>
+          Sign Out
+        </span>
+      </MenuItem>
+    </Menu>
+  </Sider>
+  <Adapter
+    style={
+      Object {
+        "background": "#fff",
+        "margin": "24px 16px",
+        "minHeight": 280,
+        "padding": 24,
+      }
+    }
+  >
+    Content
+  </Adapter>
+</div>
+`;
+
 exports[`<App /> keeps unchanged in normal state 1`] = `
 <div
   className="App ant-layout ant-layout-has-sider"
