@@ -1,6 +1,6 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<App /> keeps unchanged 1`] = `
+exports[`<App /> keeps unchanged in normal state 1`] = `
 <div
   className="App ant-layout ant-layout-has-sider"
 >
@@ -181,6 +181,172 @@ exports[`<App /> keeps unchanged 1`] = `
             }
           }
           title={undefined}
+        >
+          <i
+            className="anticon anticon-logout"
+          />
+          <span>
+            Sign Out
+          </span>
+        </li>
+      </ul>
+    </div>
+  </div>
+  <div
+    className="ant-layout-content"
+    style={
+      Object {
+        "background": "#fff",
+        "margin": "24px 16px",
+        "minHeight": 280,
+        "padding": 24,
+      }
+    }
+  >
+    Content
+  </div>
+</div>
+`;
+
+exports[`<App /> keeps unchanged when menu is collapsed 1`] = `
+<div
+  className="App ant-layout ant-layout-has-sider"
+>
+  <div
+    className="header ant-layout-header"
+  >
+    <i
+      className="anticon anticon-menu-unfold trigger"
+      onClick={[Function]}
+    />
+    Historical Data
+  </div>
+  <div
+    className="sider ant-layout-sider ant-layout-sider-collapsed"
+    style={
+      Object {
+        "flex": "0 0 80px",
+        "maxWidth": "80px",
+        "minWidth": "80px",
+        "width": "80px",
+      }
+    }
+  >
+    <div
+      className="ant-layout-sider-children"
+    >
+      <ul
+        aria-activedescendant=""
+        className="ant-menu ant-menu-dark ant-menu-inline-collapsed ant-menu-root ant-menu-vertical"
+        onKeyDown={[Function]}
+        role="menu"
+        style={Object {}}
+        tabIndex="0"
+      >
+        <li
+          aria-selected={true}
+          className="ant-menu-item ant-menu-item-selected"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          role="menuitem"
+          style={Object {}}
+        >
+          <i
+            className="anticon anticon-clock-circle-o"
+          />
+          <span>
+            Current Status
+          </span>
+        </li>
+        <li
+          aria-selected={false}
+          className="ant-menu-item"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          role="menuitem"
+          style={Object {}}
+        >
+          <i
+            className="anticon anticon-calendar"
+          />
+          <span>
+            Historical Data
+          </span>
+        </li>
+        <li
+          aria-selected={false}
+          className="ant-menu-item"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          role="menuitem"
+          style={Object {}}
+        >
+          <i
+            className="anticon anticon-bars"
+          />
+          <span>
+            Node List
+          </span>
+        </li>
+        <li
+          aria-selected={false}
+          className="ant-menu-item"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          role="menuitem"
+          style={Object {}}
+        >
+          <i
+            className="anticon anticon-api"
+          />
+          <span>
+            Group List
+          </span>
+        </li>
+        <li
+          aria-selected={false}
+          className="ant-menu-item"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          role="menuitem"
+          style={Object {}}
+        >
+          <i
+            className="anticon anticon-tags-o"
+          />
+          <span>
+            Tag List
+          </span>
+        </li>
+        <li
+          aria-selected={false}
+          className="ant-menu-item"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          role="menuitem"
+          style={Object {}}
+        >
+          <i
+            className="anticon anticon-setting"
+          />
+          <span>
+            Settings
+          </span>
+        </li>
+        <li
+          aria-selected={false}
+          className="ant-menu-item"
+          onClick={[Function]}
+          onMouseEnter={[Function]}
+          onMouseLeave={[Function]}
+          role="menuitem"
+          style={Object {}}
         >
           <i
             className="anticon anticon-logout"
