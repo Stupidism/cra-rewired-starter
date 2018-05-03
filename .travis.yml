@@ -29,4 +29,5 @@ after_script: greenkeeper-lockfile-upload
 script:
   - npm run lint && npm run flow
   - npm run test
+  - npm run test -- --coverage
   - npm run build && npm --silent run analyze -- --html > bundle-analysis.log.html
