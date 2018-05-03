@@ -106,31 +106,6 @@ jobs:
       - run: npm run test -- --coverage
 workflows:
   version: 2
-  lint_and_build:
-    jobs:
-      - checkout_code
-      - install_dependencies:
-          requires:
-            - checkout_code
-      - lint:
-          requires:
-            - install_dependencies
-      - build:
-          requires:
-            - lint
-            
-  test_and_coverage:
-      - checkout_code
-      - install_dependencies:
-          requires:
-            - checkout_code
-      - test:
-          requires:
-            - install_dependencies
-      - coverage:
-          requires:
-            - test
-            
   build_and_deploy:
       - checkout_code:
           filters:
@@ -165,15 +140,3 @@ workflows:
               only:
                 - develop
                 
-  build_and_analyze:
-    jobs:
-      - checkout_code
-      - install_dependencies:
-          requires:
-            - checkout_code
-      - build:
-          requires:
-            - install_dependencies
-      - analyze:
-          requires:
-            - build
