@@ -24,6 +24,8 @@
     "flow": "flow check",
     "precommit": "lint-staged && npm run flow",
     "prepush": "CI=true npm run test",
+    "lint:css": "npm run lint:stylelint 'src/**/*.less'",
+    "lint:stylelint": "stylelint --config config/.stylelintrc",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom",
@@ -46,5 +48,7 @@
     "react-test-renderer": "^16.2.0",
     "redux-devtools-extension": "^2.13.2",
     "source-map-explorer": "^1.5.0",
+    "stylelint": "^9.2.0",
+    "stylelint-config-standard": "^18.2.0"
   }
 }
