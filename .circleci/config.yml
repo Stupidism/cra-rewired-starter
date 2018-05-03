@@ -82,13 +82,13 @@ workflows:
   version: 2
   build_and_test:
     jobs:
-      - install_dependencies:
-      - lint
+      - install_dependencies
+      - lint:
           requires:
             - install_dependencies
-      - test
+      - test:
           requires:
             - install_dependencies
-      - build
+      - build:
           requires:
             - install_dependencies
