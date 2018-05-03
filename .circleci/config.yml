@@ -26,6 +26,7 @@ jobs:
       - checkout
       - run: npm install
       - run: npm run build
+      
   deploy:
     <<: *defaults
     steps:
@@ -72,10 +73,3 @@ jobs:
           key: depens-{{ checksum "package.json" }}
 
       - run: npm run test -- --coverage
-
-workflows:
-  version: 2
-  lint_and_flow:
-    jobs:
-      - lint:
-      - test:
