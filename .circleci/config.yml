@@ -9,34 +9,42 @@ jobs:
   checkout_code:
     <<: *defaults
     steps:
+      - restore_cache:
+          keys:
+            - source-{{ .Branch }}-{{ .Revision }}
+            - source-{{ .Branch }}-
+            - source-
+
       - checkout
+
       - save_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: source-v1-{{ .Branch }}-{{ .Revision }}
           paths:
-            - ~/repo
+            - ".git"
 
   install_dependencies:
     <<: *defaults
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          keys:
+            - depens-{{ checksum "package.json" }}
 
       - run: npm install
 
       - save_cache:
           paths:
             - node_modules
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}
 
   lint:
     <<: *defaults
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}
 
       - run: npm run lint && npm run flow
 
@@ -44,9 +52,9 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}
 
       - run: npm run test
 
@@ -54,9 +62,9 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}
 
       - run: npm run build
 
@@ -91,9 +99,9 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}
       - attach_workspace:
           at: ~/repo/build
 
@@ -107,9 +115,9 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: v1-dependencies-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}
 
       - run: npm run test -- --coverage
 
@@ -142,8 +150,8 @@ workflows:
               only:
                 - master
                 - develop
-                - feature/*
-                - hotfix/*
+                - /feature\/.*/
+                - /hotfix\/.*/
       - deploy:
           type: approval
           requires:
@@ -160,8 +168,6 @@ workflows:
             branches:
               only:
                 - develop
-                - feature/*
-                - hotfix/*
 
   build_and_analyze:
     jobs:
