@@ -20,12 +20,14 @@
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
     "flow": "flow check",
-    "precommit": "lint-staged && npm run flow",
-    "prepush": "CI=true npm run test",
+    "lint": "npm run lint:js && npm run lint:css",
+    "lint:fix": "npm run lint:js -- -- --write && npm run lint:css -- -- --fix",
     "lint:css": "npm run lint:stylelint 'src/**/*.less'",
     "lint:js": "npm run lint:prettier 'src/**/*.js'",
     "lint:stylelint": "stylelint --config config/.stylelintrc",
     "lint:prettier": "prettier --config config/.prettierrc --ignore-path config/.prettierignore",
+    "precommit": "lint-staged",
+    "prepush": "npm run lint && npm run flow && CI=true npm run test",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom"
