@@ -6,54 +6,26 @@ defaults: &defaults
 
 version: 2
 jobs:
-  install_dependencies:
-    <<: *defaults
-    steps:
-      - checkout
-      - restore_cache:
-          keys:
-            - depens-{{ checksum "package.json" }}
-            - depens-
-
-      - run: npm install
-
-      - save_cache:
-          paths:
-            - node_modules
-          key: depens-{{ checksum "package.json" }}
-
   lint:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          key: depens-{{ checksum "package.json" }}
-
+      - run: npm install
       - run: npm run lint && npm run flow
 
   test:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          key: depens-{{ checksum "package.json" }}
-
+      - run: npm install
       - run: npm run test
 
   build:
     <<: *defaults
     steps:
       - checkout
-      - restore_cache:
-          key: depens-{{ checksum "package.json" }}
-
+      - run: npm install
       - run: npm run build
-
-      - persist_to_workspace:
-          root: ~/repo
-          paths:
-            - build
-
   deploy:
     <<: *defaults
     steps:
@@ -105,12 +77,5 @@ workflows:
   version: 2
   lint_and_flow:
     jobs:
-      - install_dependencies:
-          requires:
-            - checkout_code
       - lint:
-          requires:
-            - install_dependencies
       - test:
-          requires:
-            - install_dependencies
