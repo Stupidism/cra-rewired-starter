@@ -66,6 +66,7 @@ jobs:
           root: ~/repo
           paths:
             - build
+            - package.json
   deploy:
     <<: *defaults
     steps:
@@ -87,13 +88,13 @@ jobs:
   analyze:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: depens-{{ checksum "package.json" }}
       - attach_workspace:
           at: ~/repo
-      - run: npm --silent run analyze -- --html > bundle-analysis.log.html
+      - restore_cache:
+          key: depens-{{ checksum "package.json" }}
+      - run: npm --silent run analyze -- --html > bundle-analysis.html
       - store_artifacts:
-          path: /tmp/artifact-1
+          path: bundle-analysis.html
           destination: bundle-analysize.html
   coverage:
     <<: *defaults
