@@ -1,0 +1,190 @@
+# Javascript Node CircleCI 2.0 configuration file
+defaults: &defaults
+  docker:
+    - image: circleci/node:8.11
+  working_directory: ~/repo
+
+version: 2
+jobs:
+  checkout_code:
+    <<: *defaults
+    steps:
+      - checkout
+      - save_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+          paths:
+            - ~/repo
+
+  install_dependencies:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: npm install
+
+      - save_cache:
+          paths:
+            - node_modules
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+  lint:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: npm run lint && npm run flow
+
+  test:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: npm run test
+
+  build:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: npm run build
+
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - build
+
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo/build
+
+      # modify below others like run aws deploy cmd or scp files to a ftp server
+      - store_artifacts:
+          path: ~/repo/build
+          destination: prod-dist
+
+  deploy:
+    <<: *defaults
+    steps:
+      - attach_workspace:
+          at: ~/repo/build
+
+      # modify below others like run aws deploy cmd or scp files to a ftp server
+      - store_artifacts:
+          path: ~/repo/build
+          destination: dev-dist
+
+  analyze:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+      - attach_workspace:
+          at: ~/repo/build
+
+      - run: npm --silent run analyze -- --html > bundle-analysis.log.html
+
+      - store_artifacts:
+          path: /tmp/artifact-1
+          destination: bundle-analysize.html
+
+  coverage:
+    <<: *defaults
+    steps:
+      - restore_cache:
+          key: v1-repo-{{ .Environment.CIRCLE_SHA1 }}
+      - restore_cache:
+          key: v1-dependencies-{{ checksum "package.json" }}
+
+      - run: npm run test -- --coverage
+
+workflows:
+  version: 2
+  lint_and_flow:
+    jobs:
+      - checkout_code:
+      - install_dependencies:
+          requires:
+            - checkout_code
+      - lint:
+          requires:
+            - install_dependencies
+      - test:
+          requires:
+            - install_dependencies
+
+  build_and_deploy:
+    jobs:
+      - checkout_code:
+      - install_dependencies:
+          requires:
+            - checkout_code
+      - build:
+          requires:
+            - install_dependencies
+          filters:
+            branches:
+              only:
+                - master
+                - develop
+                - feature/*
+                - hotfix/*
+      - deploy:
+          type: approval
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - master
+      - deploy_dev:
+          type: approval
+          requires:
+            - build
+          filters:
+            branches:
+              only:
+                - develop
+                - feature/*
+                - hotfix/*
+
+  build_and_analyze:
+    jobs:
+      - checkout_code:
+      - install_dependencies:
+          requires:
+            - checkout_code
+      - build:
+          requires:
+            - install_dependencies
+      - analyze:
+          requires:
+            - build
+
+  test_and_coverage:
+    jobs:
+      - checkout_code:
+      - install_dependencies:
+          requires:
+            - checkout_code
+      - test:
+          requires:
+            - install_dependencies
+      - coverage:
+          requires:
+            - test
