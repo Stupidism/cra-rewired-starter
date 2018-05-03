@@ -19,7 +19,7 @@ jobs:
       - save_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
           paths:
-            - ".git"
+            - "~/repo"
 
   install_dependencies:
     <<: *defaults
