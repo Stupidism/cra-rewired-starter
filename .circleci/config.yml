@@ -3,7 +3,6 @@ defaults: &defaults
   docker:
     - image: circleci/node:8.11
   working_directory: ~/repo
-
 version: 2
 jobs:
   install_dependencies:
@@ -14,14 +13,11 @@ jobs:
           keys:
             - depens-{{ checksum "package.json" }}
             - depens-
-
       - run: npm install
-
       - save_cache:
           paths:
             - node_modules
           key: depens-{{ checksum "package.json" }}
-          
   lint:
     <<: *defaults
     steps:
@@ -29,7 +25,6 @@ jobs:
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - run: npm run lint && npm run flow
-
   test:
     <<: *defaults
     steps:
@@ -45,29 +40,24 @@ jobs:
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - run: npm run build
-      
   deploy:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/repo/build
-
       # modify below others like run aws deploy cmd or scp files to a ftp server
       - store_artifacts:
           path: ~/repo/build
           destination: prod-dist
-
   deploy_dev:
     <<: *defaults
     steps:
       - attach_workspace:
           at: ~/repo/build
-
       # modify below others like run aws deploy cmd or scp files to a ftp server
       - store_artifacts:
           path: ~/repo/build
           destination: dev-dist
-
   analyze:
     <<: *defaults
     steps:
@@ -76,13 +66,10 @@ jobs:
           key: depens-{{ checksum "package.json" }}
       - attach_workspace:
           at: ~/repo/build
-
       - run: npm --silent run analyze -- --html > bundle-analysis.log.html
-
       - store_artifacts:
           path: /tmp/artifact-1
           destination: bundle-analysize.html
-
   coverage:
     <<: *defaults
     steps:
@@ -90,9 +77,7 @@ jobs:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
-
       - run: npm run test -- --coverage
-
 workflows:
   version: 2
   build_and_test:
