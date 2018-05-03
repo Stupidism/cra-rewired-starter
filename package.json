@@ -14,10 +14,8 @@
     "redux-thunk": "^2.2.0"
   },
   "lint-staged": {
-    "src/**/*.{js,jsx,json,css,less}": [
-      "prettier --config .prettierrc --write",
-      "git add"
-    ]
+    "{src,config}/**/*.{js,jsx,json,css,less,md}": "npm run lint:prettier -- --write",
+    "src/**/*.{css,less}": "npm run lint:stylelint -- --fix"
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
