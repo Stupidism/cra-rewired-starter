@@ -59,12 +59,18 @@ jobs:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
+      
       - run: npm run build
+      
+      - persist_to_workspace:
+          root: ~/repo
+          paths:
+            - build
   deploy:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/repo/build
+          at: ~/repo
       # modify below others like run aws deploy cmd or scp files to a ftp server
       - store_artifacts:
           path: ~/repo/build
@@ -73,7 +79,7 @@ jobs:
     <<: *defaults
     steps:
       - attach_workspace:
-          at: ~/repo/build
+          at: ~/repo
       # modify below others like run aws deploy cmd or scp files to a ftp server
       - store_artifacts:
           path: ~/repo/build
@@ -82,11 +88,9 @@ jobs:
     <<: *defaults
     steps:
       - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
-      - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - attach_workspace:
-          at: ~/repo/build
+          at: ~/repo
       - run: npm --silent run analyze -- --html > bundle-analysis.log.html
       - store_artifacts:
           path: /tmp/artifact-1
