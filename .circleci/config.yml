@@ -59,9 +59,9 @@ jobs:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
-      
+
       - run: npm run build
-      
+
       - persist_to_workspace:
           root: ~/repo
           paths:
@@ -106,7 +106,34 @@ jobs:
       - run: npm run test -- --coverage
 workflows:
   version: 2
+  lint_and_build:
+    jobs:
+      - checkout_code
+      - install_dependencies:
+          requires:
+            - checkout_code
+      - lint:
+          requires:
+            - install_dependencies
+      - build:
+          requires:
+            - lint
+
+  test_and_coverage:
+    jobs:
+      - checkout_code
+      - install_dependencies:
+          requires:
+            - checkout_code
+      - test:
+          requires:
+            - install_dependencies
+      - coverage:
+          requires:
+            - test
+
   build_and_deploy:
+    jobs:
       - checkout_code:
           filters:
             branches:
@@ -139,4 +166,16 @@ workflows:
             branches:
               only:
                 - develop
-                
+
+  build_and_analyze:
+    jobs:
+      - checkout_code
+      - install_dependencies:
+          requires:
+            - checkout_code
+      - build:
+          requires:
+            - install_dependencies
+      - analyze:
+          requires:
+            - build
