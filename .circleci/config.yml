@@ -6,30 +6,14 @@ defaults: &defaults
 
 version: 2
 jobs:
-  checkout_code:
-    <<: *defaults
-    steps:
-      - restore_cache:
-          keys:
-            - source-{{ .Branch }}-{{ .Revision }}
-            - source-{{ .Branch }}-
-            - source-
-
-      - checkout
-
-      - save_cache:
-          key: source-v1-{{ .Branch }}-{{ .Revision }}
-          paths:
-            - ".git"
-
   install_dependencies:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
+      - checkout
       - restore_cache:
           keys:
             - depens-{{ checksum "package.json" }}
+            - depens-
 
       - run: npm install
 
@@ -41,8 +25,7 @@ jobs:
   lint:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
+      - checkout
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
 
@@ -51,8 +34,7 @@ jobs:
   test:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
+      - checkout
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
 
@@ -61,8 +43,7 @@ jobs:
   build:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
+      - checkout
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
 
@@ -84,7 +65,7 @@ jobs:
           path: ~/repo/build
           destination: prod-dist
 
-  deploy:
+  deploy_dev:
     <<: *defaults
     steps:
       - attach_workspace:
@@ -98,8 +79,7 @@ jobs:
   analyze:
     <<: *defaults
     steps:
-      - restore_cache:
-          key: source-{{ .Branch }}-{{ .Revision }}
+      - checkout
       - restore_cache:
           key: depens-{{ checksum "package.json" }}
       - attach_workspace:
@@ -125,7 +105,6 @@ workflows:
   version: 2
   lint_and_flow:
     jobs:
-      - checkout_code:
       - install_dependencies:
           requires:
             - checkout_code
