@@ -14,8 +14,14 @@
     "redux-thunk": "^2.2.0"
   },
   "lint-staged": {
-    "{src,config}/**/*.{js,jsx,json,css,less,md}": "npm run lint:prettier -- --write",
-    "src/**/*.{css,less}": "npm run lint:stylelint -- --fix"
+    "{src,config}/**/*.{js,jsx,json}": [
+      "npm run lint:prettier -- --write",
+      "git add"
+    ],
+    "src/**/*.{css,less}": [
+      "npm run lint:stylelint -- --fix",
+      "git add"
+    ]
   },
   "scripts": {
     "analyze": "source-map-explorer build/static/js/main.*",
@@ -24,9 +30,10 @@
     "lint:fix": "npm run lint:js -- -- --write && npm run lint:css -- -- --fix",
     "lint:css": "npm run lint:stylelint 'src/**/*.less'",
     "lint:js": "npm run lint:prettier 'src/**/*.js' -- --list-different",
+    "lint:staged": "lint-staged",
     "lint:stylelint": "stylelint --config config/.stylelintrc",
     "lint:prettier": "prettier --config config/.prettierrc --ignore-path config/.prettierignore",
-    "precommit": "lint-staged",
+    "precommit": "npm run lint:staged",
     "prepush": "npm run lint && npm run flow && CI=true npm run test",
     "start": "react-app-rewired start",
     "build": "react-app-rewired build",
