@@ -2,6 +2,10 @@
 
 我们使用 git hooks 来保证每次的代码 commit 和 push 保持我们要求的代码风格
 
+## commit-msg
+在每次填写 commit message 之后, 完成 commit 之前, git hooks 会自动运行以下指令来校验格式, 通过后才允许 commit 完成
+`commitlint -e $GIT_PARAMS`
+
 ## pre-push
 
 在每次 push 之前, git hooks 会自动运行以下指令, 通过后才允许 push

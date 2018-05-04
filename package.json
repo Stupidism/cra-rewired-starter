@@ -33,6 +33,7 @@
     "lint:staged": "lint-staged",
     "lint:stylelint": "stylelint --config config/.stylelintrc",
     "lint:prettier": "prettier --config config/.prettierrc --ignore-path config/.prettierignore",
+    "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "npm run lint:staged",
     "prepush": "npm run lint && npm run flow && CI=true npm run test",
     "start": "react-app-rewired start",
@@ -40,6 +41,8 @@
     "test": "react-app-rewired test --env=jsdom"
   },
   "devDependencies": {
+    "@commitlint/cli": "^6.2.0",
+    "@commitlint/config-conventional": "^6.1.3",
     "babel-plugin-import": "^1.5.0",
     "enzyme": "^3.2.0",
     "enzyme-adapter-react-16": "^1.1.0",
