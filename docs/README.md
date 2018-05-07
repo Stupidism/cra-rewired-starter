@@ -1,4 +1,5 @@
 # cra-rewired-starter
+[![Greenkeeper badge](https://badges.greenkeeper.io/Stupidism/cra-rewired-starter.svg)](https://greenkeeper.io/)
 
 ## Code Quality
 我们的项目在代码质量方面遵循一些业内公认的 Best Practice (最佳实践), 包括代码风格, 分支策略和 commit message 等方面,
@@ -18,8 +19,6 @@ Below you will find some information on how to perform common tasks.<br>
 You can find the most recent version of this guide [here](https://github.com/facebookincubator/create-react-app/blob/master/packages/react-scripts/template/README.md).
 
 ## Common Tasks
-
-[![Greenkeeper badge](https://badges.greenkeeper.io/ClarityMovement/jakiro.svg?token=55c6d3f811d58076fb5a0130ae8851d2760217451fa22f4e1c6ecbc40e433229&ts=1508875163724)](https://greenkeeper.io/)
 
 - [Updating to New Releases](#updating-to-new-releases)
 - [Sending Feedback](#sending-feedback)
