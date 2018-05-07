@@ -33,6 +33,7 @@ exports[`<App /> keeps child components unchanged 1`] = `
           "0",
         ]
       }
+      focusable={false}
       mode="inline"
       prefixCls="ant-menu"
       theme="dark"
@@ -152,20 +153,22 @@ exports[`<App /> keeps unchanged in normal state 1`] = `
       className="ant-layout-sider-children"
     >
       <ul
-        aria-activedescendant=""
         className="ant-menu ant-menu-dark ant-menu-root ant-menu-inline"
-        onKeyDown={[Function]}
+        onClick={[Function]}
         role="menu"
         style={Object {}}
-        tabIndex="0"
       >
         <li
           aria-disabled={undefined}
-          aria-selected={true}
           className="ant-menu-item ant-menu-item-selected"
+          onBlur={undefined}
           onClick={[Function]}
+          onContextMenu={undefined}
+          onFocus={undefined}
+          onMouseDown={undefined}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
+          onTouchStart={undefined}
           role="menuitem"
           style={
             Object {
@@ -183,11 +186,15 @@ exports[`<App /> keeps unchanged in normal state 1`] = `
         </li>
         <li
           aria-disabled={undefined}
-          aria-selected={false}
           className="ant-menu-item"
+          onBlur={undefined}
           onClick={[Function]}
+          onContextMenu={undefined}
+          onFocus={undefined}
+          onMouseDown={undefined}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
+          onTouchStart={undefined}
           role="menuitem"
           style={
             Object {
@@ -205,11 +212,15 @@ exports[`<App /> keeps unchanged in normal state 1`] = `
         </li>
         <li
           aria-disabled={undefined}
-          aria-selected={false}
           className="ant-menu-item"
+          onBlur={undefined}
           onClick={[Function]}
+          onContextMenu={undefined}
+          onFocus={undefined}
+          onMouseDown={undefined}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
+          onTouchStart={undefined}
           role="menuitem"
           style={
             Object {
@@ -227,11 +238,15 @@ exports[`<App /> keeps unchanged in normal state 1`] = `
         </li>
         <li
           aria-disabled={undefined}
-          aria-selected={false}
           className="ant-menu-item"
+          onBlur={undefined}
           onClick={[Function]}
+          onContextMenu={undefined}
+          onFocus={undefined}
+          onMouseDown={undefined}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
+          onTouchStart={undefined}
           role="menuitem"
           style={
             Object {
@@ -249,11 +264,15 @@ exports[`<App /> keeps unchanged in normal state 1`] = `
         </li>
         <li
           aria-disabled={undefined}
-          aria-selected={false}
           className="ant-menu-item"
+          onBlur={undefined}
           onClick={[Function]}
+          onContextMenu={undefined}
+          onFocus={undefined}
+          onMouseDown={undefined}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
+          onTouchStart={undefined}
           role="menuitem"
           style={
             Object {
@@ -271,11 +290,15 @@ exports[`<App /> keeps unchanged in normal state 1`] = `
         </li>
         <li
           aria-disabled={undefined}
-          aria-selected={false}
           className="ant-menu-item"
+          onBlur={undefined}
           onClick={[Function]}
+          onContextMenu={undefined}
+          onFocus={undefined}
+          onMouseDown={undefined}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
+          onTouchStart={undefined}
           role="menuitem"
           style={
             Object {
@@ -293,11 +316,15 @@ exports[`<App /> keeps unchanged in normal state 1`] = `
         </li>
         <li
           aria-disabled={undefined}
-          aria-selected={false}
           className="ant-menu-item"
+          onBlur={undefined}
           onClick={[Function]}
+          onContextMenu={undefined}
+          onFocus={undefined}
+          onMouseDown={undefined}
           onMouseEnter={[Function]}
           onMouseLeave={[Function]}
+          onTouchStart={undefined}
           role="menuitem"
           style={
             Object {
@@ -360,15 +387,12 @@ exports[`<App /> keeps unchanged when menu is collapsed 1`] = `
       className="ant-layout-sider-children"
     >
       <ul
-        aria-activedescendant=""
         className="ant-menu ant-menu-dark ant-menu-inline-collapsed ant-menu-root ant-menu-vertical"
-        onKeyDown={[Function]}
+        onClick={[Function]}
         role="menu"
         style={Object {}}
-        tabIndex="0"
       >
         <li
-          aria-selected={true}
           className="ant-menu-item ant-menu-item-selected"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -384,7 +408,6 @@ exports[`<App /> keeps unchanged when menu is collapsed 1`] = `
           </span>
         </li>
         <li
-          aria-selected={false}
           className="ant-menu-item"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -400,7 +423,6 @@ exports[`<App /> keeps unchanged when menu is collapsed 1`] = `
           </span>
         </li>
         <li
-          aria-selected={false}
           className="ant-menu-item"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -416,7 +438,6 @@ exports[`<App /> keeps unchanged when menu is collapsed 1`] = `
           </span>
         </li>
         <li
-          aria-selected={false}
           className="ant-menu-item"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -432,7 +453,6 @@ exports[`<App /> keeps unchanged when menu is collapsed 1`] = `
           </span>
         </li>
         <li
-          aria-selected={false}
           className="ant-menu-item"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -448,7 +468,6 @@ exports[`<App /> keeps unchanged when menu is collapsed 1`] = `
           </span>
         </li>
         <li
-          aria-selected={false}
           className="ant-menu-item"
           onClick={[Function]}
           onMouseEnter={[Function]}
@@ -464,7 +483,6 @@ exports[`<App /> keeps unchanged when menu is collapsed 1`] = `
           </span>
         </li>
         <li
-          aria-selected={false}
           className="ant-menu-item"
           onClick={[Function]}
           onMouseEnter={[Function]}
