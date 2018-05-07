@@ -154,7 +154,6 @@ exports[`<App /> keeps unchanged in normal state 1`] = `
     >
       <ul
         className="ant-menu ant-menu-dark ant-menu-root ant-menu-inline"
-        onClick={[Function]}
         role="menu"
         style={Object {}}
       >
@@ -388,7 +387,6 @@ exports[`<App /> keeps unchanged when menu is collapsed 1`] = `
     >
       <ul
         className="ant-menu ant-menu-dark ant-menu-inline-collapsed ant-menu-root ant-menu-vertical"
-        onClick={[Function]}
         role="menu"
         style={Object {}}
       >
