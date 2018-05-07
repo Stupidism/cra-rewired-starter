@@ -32,7 +32,7 @@ git up
 gco master
 gco -b feature/add-example-feature
 ```
-注: `gco` 相当于 `git checkout`, 如果使用的是自定义命令行工具 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), 就可以使用这些简写.
+注: `gco` 相当于 `git checkout`, 如果使用的是自定义命令行工具 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), 就可以使用这些简写.  
 注: `git up` 相当于 `pull --rebase --autostash`, 出自一个小工具[git-up](https://github.com/aanand/git-up), 可以执行 `git config --global alias.up 'pull --rebase --autostash'` 来获得这个自定义指令.
 
 ### Push Branch

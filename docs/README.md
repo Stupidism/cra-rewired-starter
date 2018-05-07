@@ -6,6 +6,8 @@
 
 - [lint](./lint.md)
 - [git-hooks](./git-hooks.md)
+- [commit-message](./commit-message.md)
+- [workflow](./workflow.md)
 
 这个项目是用 Create React App (以后简称 CRA) 启动的, 以下是 CRA 的文档, 没有单独分开文件是为了便于 search
 
