@@ -28,20 +28,22 @@ jobs:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
           keys:
+            - depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
             - depens-{{ checksum "package.json" }}
             - depens-
-      - run: npm install
+      - run: sudo npm i -g npm@6
+      - run: npm ci
       - save_cache:
           paths:
             - node_modules
-          key: depens-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
   lint:
     <<: *defaults
     steps:
       - restore_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: depens-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
       - run: npm run lint && npm run flow
   test:
     <<: *defaults
@@ -49,7 +51,7 @@ jobs:
       - restore_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: depens-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
       - run: npm run test
 
   build:
@@ -58,7 +60,7 @@ jobs:
       - restore_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: depens-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
 
       - run: npm run build
 
@@ -67,6 +69,7 @@ jobs:
           paths:
             - build
             - package.json
+            - package-lock.json
   deploy:
     <<: *defaults
     steps:
@@ -91,7 +94,7 @@ jobs:
       - attach_workspace:
           at: ~/repo
       - restore_cache:
-          key: depens-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
       - run: npm --silent run analyze -- --html > bundle-analysis.html
       - store_artifacts:
           path: bundle-analysis.html
@@ -102,7 +105,7 @@ jobs:
       - restore_cache:
           key: source-{{ .Branch }}-{{ .Revision }}
       - restore_cache:
-          key: depens-{{ checksum "package.json" }}
+          key: depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
       - run: npm run test -- --coverage
 workflows:
   version: 2
