@@ -7,6 +7,8 @@ module.exports = function overrideWebpack(config, env) {
     config,
   );
 
+  config = injectBabelPlugin(['lodash', ['lodash', 'recompose']], config);
+
   config = rewireLess.withLoaderOptions({})(config, env);
 
   return config;
