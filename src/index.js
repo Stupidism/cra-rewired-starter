@@ -5,10 +5,9 @@ import { BrowserRouter, Route, Switch } from 'react-router-dom';
 
 import store from './store';
 import NotFound from './routes/NotFound';
-
 import './index.css';
-import App from './App';
-import registerServiceWorker from './registerServiceWorker';
+import App from './routes';
+import registerServiceWorker from './utils/registerServiceWorker';
 
 ReactDOM.render(
   <Provider store={store}>
