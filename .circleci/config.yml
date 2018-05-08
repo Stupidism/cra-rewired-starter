@@ -31,6 +31,7 @@ jobs:
             - depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
             - depens-{{ checksum "package.json" }}
             - depens-
+      - run: npm i -g npm@6
       - run: npm ci
       - save_cache:
           paths:
