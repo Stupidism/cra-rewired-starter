@@ -31,7 +31,7 @@ jobs:
             - depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
             - depens-{{ checksum "package.json" }}
             - depens-
-      - run: npm install
+      - run: npm ci
       - save_cache:
           paths:
             - node_modules
