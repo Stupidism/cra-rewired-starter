@@ -9,5 +9,12 @@ module.exports = function overrideJest(config) {
     },
   };
 
+  config.collectCoverageFrom = [
+    'src/**/*.{js,jsx}',
+    '!src/**/*.test.{js,jsx}',
+    '!src/index.js',
+    '!src/utils/registerServiceWorker.js',
+  ];
+
   return config;
 };
