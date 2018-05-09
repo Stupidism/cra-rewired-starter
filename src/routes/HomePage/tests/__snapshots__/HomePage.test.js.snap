@@ -1,0 +1,64 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<HomePage /> should be consistent with snapshot 1`] = `
+<div
+  className="HomePage"
+>
+  <p>
+    To get started, edit 
+    <code>
+      src/containers/App/App.js
+    </code>
+     and save to reload.
+  </p>
+  <p>
+    This repo is created upon
+     
+    <Component
+      to="https://github.com/facebook/create-react-app"
+    >
+      create-react-app
+    </Component>
+    . Extra features are listed below:
+  </p>
+  <p>
+    Click 
+    <Link
+      replace={false}
+      to="/some/undefined/route"
+    >
+      some undefined route
+    </Link>
+     to try
+     
+    <Component
+      to="https://github.com/ReactTraining/react-router"
+    >
+      react-router
+    </Component>
+    .
+  </p>
+  <p>
+    Look at this beautiful toggle 
+    <Connect(withHandlers(Component)) />
+    , it's from
+     
+    <Component
+      to="https://ant.design/components/switch/"
+    >
+      ant-design
+    </Component>
+    .
+  </p>
+  <p>
+    Did you find? The toggle controls the logo across components thanks to
+     
+    <Component
+      to="https://redux.js.org/introduction"
+    >
+      redux
+    </Component>
+    .
+  </p>
+</div>
+`;
