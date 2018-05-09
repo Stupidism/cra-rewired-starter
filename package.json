@@ -28,7 +28,7 @@
     "analyze": "source-map-explorer build/static/js/main.*",
     "flow": "flow check",
     "lint": "npm run lint:js && npm run lint:css",
-    "lint:fix": "npm run lint:js -- -- --write && npm run lint:css -- -- --fix",
+    "lint:fix": "npm run lint:js -- --write && npm run lint:css -- --fix",
     "lint:css": "npm run lint:stylelint 'src/**/*.less'",
     "lint:js": "npm run lint:prettier 'src/**/*.js' -- --list-different",
     "lint:staged": "lint-staged",
