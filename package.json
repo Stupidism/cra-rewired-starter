@@ -37,6 +37,7 @@
     "lint:staged": "lint-staged",
     "lint:stylelint": "stylelint --config config/.stylelintrc",
     "lint:prettier": "prettier --config config/.prettierrc --ignore-path config/.prettierignore",
+    "test:coverage": "npm run test -- --coverage",
     "commitmsg": "commitlint -e $GIT_PARAMS",
     "precommit": "npm run lint:staged",
     "prepush": "npm run lint && npm run flow && CI=true npm run test",
