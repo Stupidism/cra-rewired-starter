@@ -28,7 +28,7 @@
     "analyze": "source-map-explorer build/static/js/main.*",
     "analyze:ci": "npm --silent run analyze -- --html > bundle-analysis.html",
     "deploy": "gh-pages -d build",
-    "deploy:ci": "cp coverage bundle-analysis.html -r build && npm run deploy",
+    "deploy:ci": "npm run deploy -- --repo https://$GH_TOKEN@github.com/stupidism/cra-rewired-app.git",
     "flow": "flow check",
     "lint": "npm run lint:js && npm run lint:css",
     "lint:fix": "npm run lint:js -- --write && npm run lint:css -- --fix",

@@ -33,4 +33,4 @@ script:
   - npm run lint && npm run flow
   - npm run test -- --coverage
   - npm run build && npm run analyze:ci
-  - npm run deploy:ci
+  - cp coverage bundle-analysis.html -r build && npm run deploy:ci

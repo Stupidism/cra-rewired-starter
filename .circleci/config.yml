@@ -91,9 +91,11 @@ jobs:
   deploy:
     <<: *defaults
     steps:
+      - restore_cache:
+          key: depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
       - attach_workspace:
           at: ~/repo
-      - run: npm run deploy:ci
+      - run: cp coverage bundle-analysis.html -r build && npm run deploy:ci
 workflows:
   version: 2
   ci_cd:
