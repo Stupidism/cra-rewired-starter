@@ -18,6 +18,7 @@ addons:
     packages:
       - g++-4.8
 install:
+  - npm i -g npm@6
   - npm ci
 
 # greenkeeper update npm lockfile
