@@ -53,10 +53,9 @@ jobs:
       - restore_cache:
           key: depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
       - run: npm run test:coverage
-      - persist_to_workspace:
-          root: ~/repo
-          paths:
-            - coverage
+      - store_artifacts:
+          path: coverage
+          destination: coverage
   build:
     <<: *defaults
     steps:
@@ -84,10 +83,6 @@ jobs:
       - store_artifacts:
           path: bundle-analysis.html
           destination: bundle-analysize.html
-      - persist_to_workspace:
-          root: ~/repo
-          paths:
-            - bundle-analysis.html
   deploy:
     <<: *defaults
     steps:
@@ -95,7 +90,9 @@ jobs:
           at: ~/repo
       - restore_cache:
           key: depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
-      - run: cp coverage bundle-analysis.html -r build && npm run deploy:ci
+      - store_artifacts:
+          path: build
+          destination: build
 workflows:
   version: 2
   ci_cd:
