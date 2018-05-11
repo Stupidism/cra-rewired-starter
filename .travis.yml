@@ -28,9 +28,9 @@ before_script: greenkeeper-lockfile-update
 after_script: greenkeeper-lockfile-upload
 after_success:
   - bash <(curl -s https://codecov.io/bash)
+  - cp -r coverage bundle-analysis.html build && npm run deploy:ci
 
 script:
   - npm run lint && npm run flow
   - npm run test -- --coverage
   - npm run build && npm run analyze:ci
-  - cp coverage bundle-analysis.html -r build && npm run deploy:ci
