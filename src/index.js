@@ -5,7 +5,7 @@ import { HashRouter } from 'react-router-dom';
 
 import store from './store';
 import './index.css';
-import App from './routes/App';
+import App from './routes';
 import registerServiceWorker from './utils/registerServiceWorker';
 
 ReactDOM.render(

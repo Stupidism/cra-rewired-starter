@@ -3,7 +3,7 @@ import { shallow } from 'enzyme';
 import { Route } from 'react-router-dom';
 
 import Header from 'containers/Header';
-import App from 'routes/App';
+import App from 'routes';
 
 describe('<App />', () => {
   it('should be consistent with snapshot', () => {

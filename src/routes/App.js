@@ -2,8 +2,9 @@ import React, { Component } from 'react';
 import { Route, Switch } from 'react-router-dom';
 
 import Header from 'containers/Header';
-import HomePage from 'routes/HomePage';
-import NotFoundPage from 'routes/NotFoundPage';
+
+import HomePage from './HomePage';
+import NotFoundPage from './NotFoundPage';
 
 import './App.less';
 
