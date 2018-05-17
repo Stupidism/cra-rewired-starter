@@ -1,8 +1,8 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
 exports[`<App /> should be consistent with snapshots when default 1`] = `
-<header
-  className="Header"
+<div
+  className="Header ant-layout-header"
 >
   <img
     alt="logo"
@@ -14,12 +14,12 @@ exports[`<App /> should be consistent with snapshots when default 1`] = `
   >
     Welcome to React
   </h1>
-</header>
+</div>
 `;
 
 exports[`<App /> should be consistent with snapshots when logo is spinning 1`] = `
-<header
-  className="Header"
+<div
+  className="Header ant-layout-header"
 >
   <img
     alt="logo"
@@ -31,5 +31,5 @@ exports[`<App /> should be consistent with snapshots when logo is spinning 1`] =
   >
     Welcome to React
   </h1>
-</header>
+</div>
 `;
