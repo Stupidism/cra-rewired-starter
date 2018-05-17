@@ -1,6 +1,5 @@
 import createAsyncComponent from 'modules/createAsyncComponent';
 
-export default createAsyncComponent(
-  /* webpackChunkName "routes-HomePage" */
-  () => import('./HomePage'),
+export default createAsyncComponent(() =>
+  import(/* webpackChunkName: "routes-HomePage" */ './HomePage'),
 );
