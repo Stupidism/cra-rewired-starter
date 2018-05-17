@@ -6,7 +6,7 @@ import ExternalLink from 'components/ExternalLink';
 import LogoSpinSwitch from './LogoSpinSwitch';
 import './HomePage.less';
 
-export const HomePage = () => (
+const HomePage = () => (
   <div className="HomePage">
     <p>
       To get started, edit <code>src/containers/App/App.js</code> and save to

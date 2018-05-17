@@ -11,7 +11,7 @@ exports[`<AsyncComponent /> <AsyncHomePage /> should render a Loader first and t
 />
 `;
 
-exports[`<AsyncComponent /> <AsyncHomePage /> should render a Loader first and then itself 2`] = `<Component />`;
+exports[`<AsyncComponent /> <AsyncHomePage /> should render a Loader first and then itself 2`] = `<HomePage />`;
 
 exports[`<AsyncComponent /> <AsyncNotFoundPage /> should render a Loader first and then itself 1`] = `
 <Loading
@@ -24,4 +24,4 @@ exports[`<AsyncComponent /> <AsyncNotFoundPage /> should render a Loader first a
 />
 `;
 
-exports[`<AsyncComponent /> <AsyncNotFoundPage /> should render a Loader first and then itself 2`] = `<Component />`;
+exports[`<AsyncComponent /> <AsyncNotFoundPage /> should render a Loader first and then itself 2`] = `<NotFoundPage />`;
