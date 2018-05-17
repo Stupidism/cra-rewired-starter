@@ -1,3 +1,6 @@
-import HomePage from './HomePage';
+import createAsyncComponent from 'modules/createAsyncComponent';
 
-export default HomePage;
+export default createAsyncComponent(
+  /* webpackChunkName "routes-HomePage" */
+  () => import('./HomePage'),
+);
