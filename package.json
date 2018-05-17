@@ -7,6 +7,8 @@
     "lodash": "^4.17.10",
     "react": "^16.3.2",
     "react-dom": "^16.3.2",
+    "react-loadable": "^5.4.0",
+    "react-loading": "^2.0.2",
     "react-redux": "^5.0.6",
     "react-router-dom": "^4.2.2",
     "recompose": "^0.27.0",
@@ -25,7 +27,7 @@
     ]
   },
   "scripts": {
-    "analyze": "source-map-explorer build/static/js/main.*",
+    "analyze": "source-map-explorer",
     "analyze:ci": "npm --silent run analyze -- --html > bundle-analysis.html",
     "deploy": "gh-pages -d build",
     "deploy:ci": "npm run deploy -- --repo https://$GH_TOKEN@github.com/stupidism/cra-rewired-starter.git",
@@ -45,7 +47,7 @@
     "build": "react-app-rewired build",
     "test": "react-app-rewired test --env=jsdom"
   },
-  "homepage" : "http://stupidism.github.io/cra-rewired-starter",
+  "homepage": "http://stupidism.github.io/cra-rewired-starter",
   "devDependencies": {
     "@commitlint/cli": "^6.2.0",
     "@commitlint/config-conventional": "^6.1.3",
