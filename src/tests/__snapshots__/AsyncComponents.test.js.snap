@@ -1,0 +1,14 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<AsyncComponent /> <AsyncHomePage /> should render a Loader first and then itself 1`] = `
+<Loading
+  className="Loading"
+  color="#262729"
+  delay={0}
+  height={64}
+  type="spokes"
+  width={64}
+/>
+`;
+
+exports[`<AsyncComponent /> <AsyncHomePage /> should render a Loader first and then itself 2`] = `<Component />`;
