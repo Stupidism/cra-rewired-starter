@@ -3,9 +3,11 @@ import { shallow } from 'enzyme';
 import _ from 'lodash';
 
 import AsyncHomePage from 'routes/HomePage';
+import AsyncNotFoundPage from 'routes/NotFoundPage';
 
 const AsyncComponents = {
   AsyncHomePage,
+  AsyncNotFoundPage,
 };
 
 describe('<AsyncComponent />', () => {
