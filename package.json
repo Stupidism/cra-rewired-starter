@@ -14,7 +14,8 @@
     "recompose": "^0.27.0",
     "redux": "^4.0.0",
     "redux-create-reducer": "^1.1.2",
-    "redux-thunk": "^2.2.0"
+    "redux-thunk": "^2.2.0",
+    "wretch": "^1.1.2"
   },
   "lint-staged": {
     "{src,config}/**/*.{js,jsx,json}": [
