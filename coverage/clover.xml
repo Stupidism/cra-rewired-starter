@@ -1,10 +1,10 @@
 <?xml version="1.0" encoding="UTF-8"?>
-<coverage generated="1527180956947" clover="3.2.0">
-  <project timestamp="1527180956947" name="All files">
+<coverage generated="1527188204092" clover="3.2.0">
+  <project timestamp="1527188204092" name="All files">
     <metrics statements="103" coveredstatements="103" conditionals="30" coveredconditionals="30" methods="58" coveredmethods="58" elements="191" coveredelements="191" complexity="0" loc="103" ncloc="103" packages="18" files="34" classes="34">
       <package name="apis">
         <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
-        <file name="fetch.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/apis/fetch.js">
+        <file name="fetch.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/apis/fetch.js">
           <metrics statements="9" coveredstatements="9" conditionals="6" coveredconditionals="6" methods="3" coveredmethods="3"/>
           <line num="3" count="9" type="stmt"/>
           <line num="5" count="9" type="stmt"/>
@@ -16,88 +16,88 @@
           <line num="16" count="2" type="stmt"/>
           <line num="19" count="9" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/apis/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/apis/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="apis.mashape.random-quotes">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="list.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/apis/mashape/random-quotes/list.js">
+        <file name="list.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/apis/mashape/random-quotes/list.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="1" count="4" type="stmt"/>
         </file>
       </package>
       <package name="components.Dependencies">
         <metrics statements="5" coveredstatements="5" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <file name="Dependencies.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/components/Dependencies/Dependencies.js">
+        <file name="Dependencies.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/components/Dependencies/Dependencies.js">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="12" count="2" type="stmt"/>
           <line num="52" count="2" type="stmt"/>
           <line num="59" count="2" type="stmt"/>
           <line num="60" count="1" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/components/Dependencies/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/components/Dependencies/index.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="8" count="1" type="stmt"/>
         </file>
       </package>
       <package name="components.DevDependencies">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <file name="DevDependencies.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/components/DevDependencies/DevDependencies.js">
+        <file name="DevDependencies.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/components/DevDependencies/DevDependencies.js">
           <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="4" count="2" type="stmt"/>
           <line num="94" count="2" type="stmt"/>
           <line num="95" count="1" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/components/DevDependencies/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/components/DevDependencies/index.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="8" count="1" type="stmt"/>
         </file>
       </package>
       <package name="components.ReactLoadableDependency">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="ReactLoadableDependency.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/components/ReactLoadableDependency/ReactLoadableDependency.js">
+        <file name="ReactLoadableDependency.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/components/ReactLoadableDependency/ReactLoadableDependency.js">
           <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="5" count="3" type="stmt"/>
           <line num="13" count="3" type="stmt"/>
           <line num="14" count="3" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/components/ReactLoadableDependency/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/components/ReactLoadableDependency/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="containers.Header">
         <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <file name="Header.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/containers/Header/Header.js">
+        <file name="Header.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/containers/Header/Header.js">
           <metrics statements="2" coveredstatements="2" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
           <line num="11" count="2" type="stmt"/>
           <line num="12" count="3" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/containers/Header/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/containers/Header/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="containers.LogoSpinSwitch">
         <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <file name="LogoSpinSwitch.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/containers/LogoSpinSwitch/LogoSpinSwitch.js">
+        <file name="LogoSpinSwitch.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/containers/LogoSpinSwitch/LogoSpinSwitch.js">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
           <line num="9" count="3" type="stmt"/>
           <line num="10" count="1" type="stmt"/>
           <line num="18" count="3" type="stmt"/>
           <line num="19" count="2" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/containers/LogoSpinSwitch/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/containers/LogoSpinSwitch/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="containers.RandomQuote">
         <metrics statements="13" coveredstatements="13" conditionals="2" coveredconditionals="2" methods="9" coveredmethods="9"/>
-        <file name="FetchRandomQuoteButton.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/containers/RandomQuote/FetchRandomQuoteButton.js">
+        <file name="FetchRandomQuoteButton.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/containers/RandomQuote/FetchRandomQuoteButton.js">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="12" count="4" type="stmt"/>
           <line num="13" count="2" type="stmt"/>
         </file>
-        <file name="RandomQuote.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/containers/RandomQuote/RandomQuote.js">
+        <file name="RandomQuote.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/containers/RandomQuote/RandomQuote.js">
           <metrics statements="11" coveredstatements="11" conditionals="2" coveredconditionals="2" methods="8" coveredmethods="8"/>
           <line num="17" count="3" type="stmt"/>
           <line num="19" count="3" type="stmt"/>
@@ -111,52 +111,52 @@
           <line num="42" count="2" type="stmt"/>
           <line num="44" count="1" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/containers/RandomQuote/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/containers/RandomQuote/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="modules">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="createAsyncComponent.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/modules/createAsyncComponent.js">
+        <file name="createAsyncComponent.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/modules/createAsyncComponent.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="5" count="4" type="stmt"/>
         </file>
       </package>
       <package name="modules.ExternalLink">
         <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="ExternalLink.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/modules/ExternalLink/ExternalLink.js">
+        <file name="ExternalLink.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/modules/ExternalLink/ExternalLink.js">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="3" count="6" type="stmt"/>
           <line num="4" count="2" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/modules/ExternalLink/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/modules/ExternalLink/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="modules.Loading">
         <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
-        <file name="Loading.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/modules/Loading/Loading.js">
+        <file name="Loading.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/modules/Loading/Loading.js">
           <metrics statements="2" coveredstatements="2" conditionals="4" coveredconditionals="4" methods="1" coveredmethods="1"/>
           <line num="6" count="6" type="stmt"/>
           <line num="12" count="3" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/modules/Loading/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/modules/Loading/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="routes">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
-        <file name="App.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/routes/App.js">
+        <file name="App.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/routes/App.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="13" count="3" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/routes/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/routes/index.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="routes.HomePage">
         <metrics statements="9" coveredstatements="9" conditionals="4" coveredconditionals="4" methods="7" coveredmethods="7"/>
-        <file name="HomePage.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/routes/HomePage/HomePage.js">
+        <file name="HomePage.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/routes/HomePage/HomePage.js">
           <metrics statements="8" coveredstatements="8" conditionals="4" coveredconditionals="4" methods="6" coveredmethods="6"/>
           <line num="12" count="2" type="stmt"/>
           <line num="20" count="2" type="stmt"/>
@@ -167,26 +167,26 @@
           <line num="57" count="1" type="stmt"/>
           <line num="59" count="4" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/routes/HomePage/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/routes/HomePage/index.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="4" count="1" type="stmt"/>
         </file>
       </package>
       <package name="routes.NotFoundPage">
         <metrics statements="3" coveredstatements="3" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
-        <file name="NotFoundPage.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/routes/NotFoundPage/NotFoundPage.js">
+        <file name="NotFoundPage.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/routes/NotFoundPage/NotFoundPage.js">
           <metrics statements="2" coveredstatements="2" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="4" count="2" type="stmt"/>
           <line num="5" count="2" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/routes/NotFoundPage/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/routes/NotFoundPage/index.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="1" coveredmethods="1"/>
           <line num="4" count="1" type="stmt"/>
         </file>
       </package>
       <package name="store">
         <metrics statements="16" coveredstatements="16" conditionals="8" coveredconditionals="8" methods="6" coveredmethods="6"/>
-        <file name="connect.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/store/connect.js">
+        <file name="connect.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/store/connect.js">
           <metrics statements="10" coveredstatements="10" conditionals="4" coveredconditionals="4" methods="4" coveredmethods="4"/>
           <line num="7" count="12" type="stmt"/>
           <line num="8" count="4" type="stmt"/>
@@ -199,7 +199,7 @@
           <line num="21" count="10" type="stmt"/>
           <line num="24" count="8" type="stmt"/>
         </file>
-        <file name="index.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/store/index.js">
+        <file name="index.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/store/index.js">
           <metrics statements="6" coveredstatements="6" conditionals="4" coveredconditionals="4" methods="2" coveredmethods="2"/>
           <line num="8" count="9" type="cond" truecount="2" falsecount="0"/>
           <line num="9" count="12" type="stmt"/>
@@ -208,13 +208,13 @@
           <line num="15" count="12" type="stmt"/>
           <line num="20" count="12" type="stmt"/>
         </file>
-        <file name="reducers.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/store/reducers.js">
+        <file name="reducers.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/store/reducers.js">
           <metrics statements="0" coveredstatements="0" conditionals="0" coveredconditionals="0" methods="0" coveredmethods="0"/>
         </file>
       </package>
       <package name="store.modules">
         <metrics statements="26" coveredstatements="26" conditionals="2" coveredconditionals="2" methods="13" coveredmethods="13"/>
-        <file name="randomQuote.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/store/modules/randomQuote.js">
+        <file name="randomQuote.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/store/modules/randomQuote.js">
           <metrics statements="22" coveredstatements="22" conditionals="2" coveredconditionals="2" methods="11" coveredmethods="11"/>
           <line num="17" count="8" type="stmt"/>
           <line num="18" count="8" type="stmt"/>
@@ -239,7 +239,7 @@
           <line num="73" count="1" type="stmt"/>
           <line num="78" count="1" type="stmt"/>
         </file>
-        <file name="runtime.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/store/modules/runtime.js">
+        <file name="runtime.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/store/modules/runtime.js">
           <metrics statements="4" coveredstatements="4" conditionals="0" coveredconditionals="0" methods="2" coveredmethods="2"/>
           <line num="7" count="8" type="stmt"/>
           <line num="22" count="8" type="stmt"/>
@@ -249,14 +249,14 @@
       </package>
       <package name="store.selectors">
         <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
-        <file name="logoSpinning.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/store/selectors/logoSpinning.js">
+        <file name="logoSpinning.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/store/selectors/logoSpinning.js">
           <metrics statements="1" coveredstatements="1" conditionals="2" coveredconditionals="2" methods="1" coveredmethods="1"/>
           <line num="3" count="6" type="cond" truecount="2" falsecount="0"/>
         </file>
       </package>
       <package name="utils">
         <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
-        <file name="delayPromise.js" path="/Users/feng.sun/Documents/cra-rewired-starter/src/utils/delayPromise.js">
+        <file name="delayPromise.js" path="/home/travis/build/Stupidism/cra-rewired-starter/src/utils/delayPromise.js">
           <metrics statements="1" coveredstatements="1" conditionals="0" coveredconditionals="0" methods="3" coveredmethods="3"/>
           <line num="2" count="3" type="stmt"/>
         </file>
