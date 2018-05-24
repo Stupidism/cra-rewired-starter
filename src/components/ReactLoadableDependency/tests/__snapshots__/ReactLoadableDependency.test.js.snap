@@ -1,0 +1,19 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<ReactLoadableDependency /> should be consistent with snapshot 1`] = `
+<div>
+  <p>
+    Using 
+    <ExternalLink
+      to="https://github.com/jamiebuilds/react-loadable/"
+    >
+      react-loadable
+    </ExternalLink>
+    , code-splits for Routes and Components are easy peasy.
+  </p>
+  <Loading />
+  <p>
+    You can see this loading, because it's intentionally delayed.
+  </p>
+</div>
+`;
