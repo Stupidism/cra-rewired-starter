@@ -1,5 +1,45 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
+exports[`<AsyncComponent /> <AsyncDependencies /> should render a Loader first and then itself 1`] = `
+<div>
+  <p>
+    Using 
+    <ExternalLink
+      to="https://github.com/jamiebuilds/react-loadable/"
+    >
+      react-loadable
+    </ExternalLink>
+    , code-splits for Routes and Components are easy peasy.
+  </p>
+  <Loading />
+  <p>
+    You can see this loading, because it's intentionally delayed.
+  </p>
+</div>
+`;
+
+exports[`<AsyncComponent /> <AsyncDependencies /> should render a Loader first and then itself 2`] = `<Dependencies />`;
+
+exports[`<AsyncComponent /> <AsyncDevDependencies /> should render a Loader first and then itself 1`] = `
+<div>
+  <p>
+    Using 
+    <ExternalLink
+      to="https://github.com/jamiebuilds/react-loadable/"
+    >
+      react-loadable
+    </ExternalLink>
+    , code-splits for Routes and Components are easy peasy.
+  </p>
+  <Loading />
+  <p>
+    You can see this loading, because it's intentionally delayed.
+  </p>
+</div>
+`;
+
+exports[`<AsyncComponent /> <AsyncDevDependencies /> should render a Loader first and then itself 2`] = `<Dependencies />`;
+
 exports[`<AsyncComponent /> <AsyncHomePage /> should render a Loader first and then itself 1`] = `
 <Loading
   className="Loading"
@@ -11,7 +51,7 @@ exports[`<AsyncComponent /> <AsyncHomePage /> should render a Loader first and t
 />
 `;
 
-exports[`<AsyncComponent /> <AsyncHomePage /> should render a Loader first and then itself 2`] = `<HomePage />`;
+exports[`<AsyncComponent /> <AsyncHomePage /> should render a Loader first and then itself 2`] = `<withProps(withHandlers(Component)) />`;
 
 exports[`<AsyncComponent /> <AsyncNotFoundPage /> should render a Loader first and then itself 1`] = `
 <Loading
