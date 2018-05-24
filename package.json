@@ -29,7 +29,9 @@
   },
   "scripts": {
     "analyze": "source-map-explorer",
-    "analyze:ci": "npm --silent run analyze -- --html > bundle-analysis.html",
+    "analyze:html": "run(){ dist=build/$(basename $1).html; source-map-explorer --html $1 > $dist; echo Dump into $dist; }; run",
+    "analyze:all": "ls -1 build/static/js/*.js | xargs -I% npm --silent run analyze %",
+    "analyze:ci": "ls -1 build/static/js/*.js | xargs -I% npm --silent run analyze:html %",
     "deploy": "gh-pages -d build",
     "deploy:ci": "npm run deploy -- --repo https://$GH_TOKEN@github.com/stupidism/cra-rewired-starter.git",
     "flow": "flow check",
