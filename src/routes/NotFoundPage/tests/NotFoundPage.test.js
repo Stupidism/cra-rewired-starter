@@ -4,7 +4,7 @@ import { MemoryRouter, Link } from 'react-router-dom';
 
 import NotFoundPage from '../NotFoundPage';
 
-describe('<App />', () => {
+describe('<NotFoundPage />', () => {
   it('should be consistent with snapshot', () => {
     const snapshot = mount(
       <MemoryRouter>
