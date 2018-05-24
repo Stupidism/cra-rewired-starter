@@ -1,0 +1,119 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<Dependencies /> should be consistent with snapshot 1`] = `
+<div
+  className="Dependencies"
+>
+  <p>
+    Click 
+    <Link
+      replace={false}
+      to="/some/undefined/route"
+    >
+      some undefined route
+    </Link>
+     to try 
+    <ExternalLink
+      to="https://github.com/ReactTraining/react-router"
+    >
+      react-router-dom
+    </ExternalLink>
+    .
+  </p>
+  <p>
+    Look at this beautiful 
+    <Connect(withHandlers(Component)) />
+     from 
+    <ExternalLink
+      to="https://ant.design/"
+    >
+      antd
+    </ExternalLink>
+    . Above buttons are from antd, too.
+  </p>
+  <p>
+    You might have noticed, the toggle controls the logo across components thanks to 
+    <ExternalLink
+      to="https://redux.js.org"
+    >
+      redux & react-redux
+    </ExternalLink>
+    .
+  </p>
+  <p>
+    Have a look at the toggle's code
+     
+    <code>
+      src/components/Dependencies/LogoSpinSwitch.js
+    </code>
+    ,
+  </p>
+  <p>
+    The code is in HOC-style with the help of 
+    <ExternalLink
+      to="https://github.com/acdlite/recompose"
+    >
+      recompose
+    </ExternalLink>
+    .
+  </p>
+  <p>
+    About data-fetching, below random famous quote is fetched by
+     
+    <ExternalLink
+      to="https://github.com/elbywan/wretch"
+    >
+      wretch
+    </ExternalLink>
+  </p>
+  <div
+    className="QuoteWrapper"
+  >
+    <Connect(branch(branch(lifecycle(mapProps(RandomQuote)))))
+      loadingComponent={
+        <div>
+          <Loading
+            type="spin"
+          />
+          Something you might miss in a blink: above spinning loader is
+           
+          <ExternalLink
+            to="https://codesandbox.io/s/mqx0ql55qp"
+          >
+            react-loading
+          </ExternalLink>
+          .
+        </div>
+      }
+    />
+  </div>
+  <p>
+    <ExternalLink
+      to="https://github.com/reduxjs/redux-thunk"
+    >
+      Redux-thunk
+    </ExternalLink>
+     allows async actions like data-fetching and other IO operations to work. Try to
+     
+    <Connect(Component)>
+      load another quote
+    </Connect(Component)>
+    .
+  </p>
+  <p>
+    Also, 
+    <ExternalLink
+      to="https://lodash.com/"
+    >
+      lodash
+    </ExternalLink>
+     and 
+    <ExternalLink
+      to="https://www.npmjs.com/package/redux-create-reducer/"
+    >
+      redux-create-reducer
+    </ExternalLink>
+     are used in the project for their powerful utility functions.
+  </p>
+</div>
+`;
