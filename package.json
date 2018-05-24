@@ -29,7 +29,7 @@
   },
   "scripts": {
     "analyze": "source-map-explorer",
-    "analyze:html": "run(){ dist=build/$(basename $1).html; source-map-explorer --html $1 > $dist; echo Dump into $dist; }; run",
+    "analyze:html": "scripty",
     "analyze:all": "ls -1 build/static/js/*.js | xargs -I% npm --silent run analyze %",
     "analyze:ci": "ls -1 build/static/js/*.js | xargs -I% npm --silent run analyze:html %",
     "deploy": "gh-pages -d build",
@@ -70,8 +70,12 @@
     "react-scripts": "^1.1.4",
     "react-test-renderer": "^16.3.2",
     "redux-devtools-extension": "^2.13.2",
+    "scripty": "^1.7.2",
     "source-map-explorer": "^1.5.0",
     "stylelint": "^9.2.0",
     "stylelint-config-standard": "^18.2.0"
+  },
+  "scripty": {
+    "silent": true
   }
 }
