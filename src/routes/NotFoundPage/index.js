@@ -1,6 +1,5 @@
 import createAsyncComponent from 'modules/createAsyncComponent';
 
-export default createAsyncComponent(
-  /* webpackChunkName: "routes-NotFoundPage" */
-  () => import('./NotFoundPage'),
+export default createAsyncComponent(() =>
+  import('./NotFoundPage' /* webpackChunkName: "routes-NotFoundPage" */),
 );
