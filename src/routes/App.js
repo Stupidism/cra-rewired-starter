@@ -1,5 +1,5 @@
 import React, { Component } from 'react';
-import { Route, Switch } from 'react-router-dom';
+import { Route, Switch, Redirect } from 'react-router-dom';
 
 import Header from 'containers/Header';
 
@@ -14,7 +14,8 @@ class App extends Component {
       <div className="App">
         <Header />
         <Switch>
-          <Route exact path="/" component={HomePage} />
+          <Redirect exact from="/" to="/homepage" />
+          <Route path="/homepage" component={HomePage} />
           <Route component={NotFoundPage} />
         </Switch>
       </div>

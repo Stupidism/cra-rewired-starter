@@ -6,10 +6,15 @@ exports[`<App /> should be consistent with snapshot 1`] = `
 >
   <Connect(Component) />
   <Switch>
+    <Redirect
+      exact={true}
+      from="/"
+      push={false}
+      to="/homepage"
+    />
     <Route
       component={[Function]}
-      exact={true}
-      path="/"
+      path="/homepage"
     />
     <Route
       component={[Function]}
