@@ -1,64 +1,241 @@
 // Jest Snapshot v1, https://goo.gl/fbAQLP
 
-exports[`<HomePage /> should be consistent with snapshot 1`] = `
+exports[`<HomePage /> should be consistent with snapshots when accessing "/homepage" 1`] = `
 <div
   className="HomePage"
 >
   <p>
     To get started, edit 
     <code>
-      src/containers/App/App.js
+      src/routes/App.js
     </code>
      and save to reload.
   </p>
   <p>
-    This repo is created upon
-     
-    <Component
+    This repo is created over 
+    <ExternalLink
       to="https://github.com/facebook/create-react-app"
     >
       create-react-app
-    </Component>
+    </ExternalLink>
     . Extra features are listed below:
   </p>
+  <ButtonGroup>
+    <Button
+      ghost={false}
+      loading={false}
+      onClick={[Function]}
+      prefixCls="ant-btn"
+      type="default"
+    >
+      Dependencies
+    </Button>
+    <Button
+      ghost={false}
+      loading={false}
+      onClick={[Function]}
+      prefixCls="ant-btn"
+      type="default"
+    >
+      DevDependencies
+    </Button>
+  </ButtonGroup>
+  <Divider />
+  <Switch>
+    <Redirect
+      exact={true}
+      from="/homepage"
+      push={false}
+      to="/homepage/dependencies"
+    />
+    <Route
+      component={[Function]}
+      path="/homepage/dependencies"
+    />
+    <Route
+      component={[Function]}
+      path="/homepage/dev-dependencies"
+    />
+  </Switch>
+</div>
+`;
+
+exports[`<HomePage /> should be consistent with snapshots when accessing "/homepage/dependencies" 1`] = `
+<div
+  className="HomePage"
+>
   <p>
-    Click 
-    <Link
-      replace={false}
-      to="/some/undefined/route"
-    >
-      some undefined route
-    </Link>
-     to try
-     
-    <Component
-      to="https://github.com/ReactTraining/react-router"
-    >
-      react-router
-    </Component>
-    .
+    To get started, edit 
+    <code>
+      src/routes/App.js
+    </code>
+     and save to reload.
   </p>
   <p>
-    Look at this beautiful toggle 
-    <Connect(withHandlers(Component)) />
-    , it's from
-     
-    <Component
-      to="https://ant.design/components/switch/"
+    This repo is created over 
+    <ExternalLink
+      to="https://github.com/facebook/create-react-app"
     >
-      ant-design
-    </Component>
-    .
+      create-react-app
+    </ExternalLink>
+    . Extra features are listed below:
+  </p>
+  <ButtonGroup>
+    <Button
+      ghost={false}
+      loading={false}
+      onClick={[Function]}
+      prefixCls="ant-btn"
+      type="primary"
+    >
+      Dependencies
+    </Button>
+    <Button
+      ghost={false}
+      loading={false}
+      onClick={[Function]}
+      prefixCls="ant-btn"
+      type="default"
+    >
+      DevDependencies
+    </Button>
+  </ButtonGroup>
+  <Divider />
+  <Switch>
+    <Redirect
+      exact={true}
+      from="/homepage"
+      push={false}
+      to="/homepage/dependencies"
+    />
+    <Route
+      component={[Function]}
+      path="/homepage/dependencies"
+    />
+    <Route
+      component={[Function]}
+      path="/homepage/dev-dependencies"
+    />
+  </Switch>
+</div>
+`;
+
+exports[`<HomePage /> should be consistent with snapshots when accessing "/homepage/dev-dependencies" 1`] = `
+<div
+  className="HomePage"
+>
+  <p>
+    To get started, edit 
+    <code>
+      src/routes/App.js
+    </code>
+     and save to reload.
   </p>
   <p>
-    Did you find? The toggle controls the logo across components thanks to
-     
-    <Component
-      to="https://redux.js.org/introduction"
+    This repo is created over 
+    <ExternalLink
+      to="https://github.com/facebook/create-react-app"
     >
-      redux
-    </Component>
-    .
+      create-react-app
+    </ExternalLink>
+    . Extra features are listed below:
   </p>
+  <ButtonGroup>
+    <Button
+      ghost={false}
+      loading={false}
+      onClick={[Function]}
+      prefixCls="ant-btn"
+      type="default"
+    >
+      Dependencies
+    </Button>
+    <Button
+      ghost={false}
+      loading={false}
+      onClick={[Function]}
+      prefixCls="ant-btn"
+      type="primary"
+    >
+      DevDependencies
+    </Button>
+  </ButtonGroup>
+  <Divider />
+  <Switch>
+    <Redirect
+      exact={true}
+      from="/homepage"
+      push={false}
+      to="/homepage/dependencies"
+    />
+    <Route
+      component={[Function]}
+      path="/homepage/dependencies"
+    />
+    <Route
+      component={[Function]}
+      path="/homepage/dev-dependencies"
+    />
+  </Switch>
+</div>
+`;
+
+exports[`<HomePage /> should be consistent with snapshots when accessing "/homepage/not-found" 1`] = `
+<div
+  className="HomePage"
+>
+  <p>
+    To get started, edit 
+    <code>
+      src/routes/App.js
+    </code>
+     and save to reload.
+  </p>
+  <p>
+    This repo is created over 
+    <ExternalLink
+      to="https://github.com/facebook/create-react-app"
+    >
+      create-react-app
+    </ExternalLink>
+    . Extra features are listed below:
+  </p>
+  <ButtonGroup>
+    <Button
+      ghost={false}
+      loading={false}
+      onClick={[Function]}
+      prefixCls="ant-btn"
+      type="default"
+    >
+      Dependencies
+    </Button>
+    <Button
+      ghost={false}
+      loading={false}
+      onClick={[Function]}
+      prefixCls="ant-btn"
+      type="default"
+    >
+      DevDependencies
+    </Button>
+  </ButtonGroup>
+  <Divider />
+  <Switch>
+    <Redirect
+      exact={true}
+      from="/homepage"
+      push={false}
+      to="/homepage/dependencies"
+    />
+    <Route
+      component={[Function]}
+      path="/homepage/dependencies"
+    />
+    <Route
+      component={[Function]}
+      path="/homepage/dev-dependencies"
+    />
+  </Switch>
 </div>
 `;

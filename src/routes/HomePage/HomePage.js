@@ -1,40 +1,76 @@
 import React from 'react';
-import { Link } from 'react-router-dom';
+import { withHandlers, compose, withProps } from 'recompose';
+import { Button, Divider } from 'antd';
+import { Switch, Route, Redirect } from 'react-router-dom';
 
-import ExternalLink from 'components/ExternalLink';
+import ExternalLink from 'modules/ExternalLink';
+import Dependencies from 'components/Dependencies';
+import DevDependencies from 'components/DevDependencies';
 
-import LogoSpinSwitch from './LogoSpinSwitch';
 import './HomePage.less';
 
-const HomePage = () => (
+const links = {
+  createReactApp: (
+    <ExternalLink to="https://github.com/facebook/create-react-app">
+      create-react-app
+    </ExternalLink>
+  ),
+};
+
+export const HomePageRenderer = ({
+  match,
+  dependenciesButtonType,
+  devDependenciesButtonType,
+  goToDependencies,
+  goToDevDependencies,
+  dependenciesUrl,
+  devDependenciesUrl,
+}) => (
   <div className="HomePage">
     <p>
-      To get started, edit <code>src/containers/App/App.js</code> and save to
-      reload.
+      To get started, edit <code>src/routes/App.js</code> and save to reload.
     </p>
     <p>
-      This repo is created upon{' '}
-      <ExternalLink to="https://github.com/facebook/create-react-app">
-        create-react-app
-      </ExternalLink>. Extra features are listed below:
+      This repo is created over {links.createReactApp}. Extra features are
+      listed below:
     </p>
-    <p>
-      Click <Link to="/some/undefined/route">some undefined route</Link> to try{' '}
-      <ExternalLink to="https://github.com/ReactTraining/react-router">
-        react-router
-      </ExternalLink>.
-    </p>
-    <p>
-      Look at this beautiful toggle <LogoSpinSwitch />, it's from{' '}
-      <ExternalLink to="https://ant.design/components/switch/">
-        ant-design
-      </ExternalLink>.
-    </p>
-    <p>
-      Did you find? The toggle controls the logo across components thanks to{' '}
-      <ExternalLink to="https://redux.js.org/introduction">redux</ExternalLink>.
-    </p>
+    <Button.Group>
+      <Button type={dependenciesButtonType} onClick={goToDependencies}>
+        Dependencies
+      </Button>
+      <Button type={devDependenciesButtonType} onClick={goToDevDependencies}>
+        DevDependencies
+      </Button>
+    </Button.Group>
+    <Divider />
+    <Switch>
+      <Redirect exact from={match.url} to={dependenciesUrl} />
+      <Route path={dependenciesUrl} component={Dependencies} />
+      <Route path={devDependenciesUrl} component={DevDependencies} />
+    </Switch>
   </div>
 );
 
-export default HomePage;
+export const goToDependencies = ({ history, dependenciesUrl }) => () =>
+  history.push(dependenciesUrl);
+export const goToDevDependencies = ({ history, devDependenciesUrl }) => () =>
+  history.push(devDependenciesUrl);
+
+const propsMapper = ({ match, location }) => ({
+  dependenciesButtonType: location.pathname.endsWith('/dependencies')
+    ? 'primary'
+    : 'default',
+  devDependenciesButtonType: location.pathname.endsWith('/dev-dependencies')
+    ? 'primary'
+    : 'default',
+  dependenciesUrl: `${match.url}/dependencies`,
+  devDependenciesUrl: `${match.url}/dev-dependencies`,
+});
+
+export default compose(
+  withProps(propsMapper),
+  withHandlers({
+    goToDependencies,
+    goToDevDependencies,
+  }),
+)(HomePageRenderer);
