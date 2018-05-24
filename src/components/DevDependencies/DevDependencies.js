@@ -33,6 +33,11 @@ const links = {
       Enzyme-to-json
     </ExternalLink>
   ),
+  enzymeShallowUntil: (
+    <ExternalLink to="https://github.com/Stupidism/enzyme-shallow-until">
+      enzyme-shallow-until
+    </ExternalLink>
+  ),
   prettier: <ExternalLink to="https://prettier.io/">prettier</ExternalLink>,
   stylelint: <ExternalLink to="https://stylelint.io/">stylelint</ExternalLink>,
   stylelintConfigStandard: (
@@ -107,7 +112,10 @@ const Dependencies = () => (
     </p>
     <p>
       Before any commit, {links.lintStaged} runs lints for git-staged files
-      only, {links.prettier} for js and {links.stylelint} with{' '}
+      only.
+    </p>
+    <p>
+      We use {links.prettier} to lint js and {links.stylelint} with{' '}
       {links.stylelintConfigStandard} for css(less).
     </p>
     <p>
@@ -125,6 +133,10 @@ const Dependencies = () => (
     <p>
       {links.enzymeToJson} helps serialize EnzymeWrapper, so you can snapshot it
       with jest.
+    </p>
+    <p>
+      Snapshoting HOC-style components can be annoying, but not with{' '}
+      {links.enzymeShallowUntil}.
     </p>
     <p>
       To analyze bundle size, use npm script analyze which uses{' '}

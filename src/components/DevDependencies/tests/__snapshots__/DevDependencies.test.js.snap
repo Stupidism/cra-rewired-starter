@@ -63,13 +63,16 @@ exports[`<DevDependencies /> should be consistent with snapshot 1`] = `
     >
       lint-staged
     </ExternalLink>
-     runs lints for git-staged files only, 
+     runs lints for git-staged files only.
+  </p>
+  <p>
+    We use 
     <ExternalLink
       to="https://prettier.io/"
     >
       prettier
     </ExternalLink>
-     for js and 
+     to lint js and 
     <ExternalLink
       to="https://stylelint.io/"
     >
@@ -139,6 +142,16 @@ exports[`<DevDependencies /> should be consistent with snapshot 1`] = `
       Enzyme-to-json
     </ExternalLink>
      helps serialize EnzymeWrapper, so you can snapshot it with jest.
+  </p>
+  <p>
+    Snapshoting HOC-style components can be annoying, but not with
+     
+    <ExternalLink
+      to="https://github.com/Stupidism/enzyme-shallow-until"
+    >
+      enzyme-shallow-until
+    </ExternalLink>
+    .
   </p>
   <p>
     To analyze bundle size, use npm script analyze which uses
