@@ -1,0 +1,35 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<RandomQuote /> should be consistent with snapshot when data fetched 1`] = `
+<div
+  className="RandomQuote"
+>
+  <div>
+    All quotes are stupid except mine
+  </div>
+  <div>
+    -- 
+    Stupidism
+  </div>
+</div>
+`;
+
+exports[`<RandomQuote /> should be consistent with snapshot when failed to fetch data 1`] = `
+<div>
+  Fail to load random quote.
+   
+  <button
+    className="ant-btn ant-btn-primary"
+    onClick={[Function]}
+    type="button"
+  >
+    <span
+      key=".0"
+    >
+      Reload
+    </span>
+  </button>
+</div>
+`;
+
+exports[`<RandomQuote /> should be consistent with snapshot when still fetching data 1`] = `"Loading..."`;

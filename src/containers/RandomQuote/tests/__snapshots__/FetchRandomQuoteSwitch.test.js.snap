@@ -1,0 +1,12 @@
+// Jest Snapshot v1, https://goo.gl/fbAQLP
+
+exports[`<FetchRandomQuoteButton /> should be consistent with snapshot 1`] = `
+<Button
+  ghost={false}
+  loading={true}
+  prefixCls="ant-btn"
+  type="primary"
+>
+  Button
+</Button>
+`;
