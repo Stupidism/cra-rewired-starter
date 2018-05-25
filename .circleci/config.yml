@@ -31,8 +31,22 @@ jobs:
             - depens-{{ checksum "package.json" }}-{{ checksum "package-lock.json" }}
             - depens-{{ checksum "package.json" }}
             - depens-
-      - run: sudo npm i -g npm@6
-      - run: npm ci
+      - run:
+          name: Install npm@6
+          command: sudo npm i -g npm@6
+      - run:
+          name: Install greenkeeper-lockfile
+          command: npm i greenkeeper-lockfile@1
+      - run:
+          name: Update lock file
+          command: ./node_modules/.bin/greenkeeper-lockfile-update
+      - run:
+          name: Install dependencies in ci mode
+          command: npm ci
+# Prevent to upload lockfile twice, because travis will upload, too.
+#      - run:
+#          name: Upload new lock file
+#          command: ./node_modules/.bin/greenkeeper-lockfile-upload
       - save_cache:
           paths:
             - node_modules

@@ -23,10 +23,10 @@ install:
 
 # greenkeeper update npm lockfile
 before_install:
-- npm install -g greenkeeper-lockfile@1
-before_script: greenkeeper-lockfile-update
-after_script: greenkeeper-lockfile-upload
+  - npm install -g greenkeeper-lockfile@1
+  - greenkeeper-lockfile-update
 after_success:
+  - greenkeeper-lockfile-upload
   - bash <(curl -s https://codecov.io/bash)
   - mv coverage analysis build && npm run deploy:ci
 
