@@ -24,7 +24,8 @@
 - 每个分支有自己的测试服务器
 - 分支先验收再合并
 
-![workflow](http://luci.criosweb.ro/wp-content/uploads/2016/04/release-strategy.png)
+![workflow](./workflow.png)
+![branches](http://luci.criosweb.ro/wp-content/uploads/2016/04/release-strategy.png)
 
 ## 步骤
 
