@@ -1,20 +1,32 @@
 # Workflow
 
-在多人协作方面, 我们采用一个比较简单的工作流: Gitlab flow. 相对于复杂的 git flow (适合定期版本发布的产品) 和过于简单的 github flow (适合代码与在线版本同步持续发布的库), gitlab flow 更适合持续发布但在线版本落后于在线版本的产品.
+在多人协作方面, 我们采用一个比较简单的工作流, 没有具体的名字, 参照了这两篇博客总结出来: [real-life-git-workflow](http://luci.criosweb.ro/a-real-life-git-workflow-why-git-flow-does-not-work-for-us/) 和 [git-process-that-works](https://reallifeprogramming.com/git-process-that-works-say-no-to-gitflow-50bf2038ccf7).  
+
+下面是几种常见的几种 workflow:
+
+- git flow 适合定期版本发布的产品
+- github flow 适合代码与在线版本同步持续发布的产品
+- gitlab flow 适合持续发布但在线版本落后于代码的产品
 
 关于三者的对比, 可以查看这篇[博客](http://www.ruanyifeng.com/blog/2015/12/git-workflow.html);
 
-## Gitlab Flow
+## 原则
 
-简单介绍一下 gitlab flow:
+- 尽早反馈: 尽可能早地发现问题, 反馈问题
+- 有迹可循: 一切行为应当在网络上留下记录, 任务有 task tracker (jira), 代码有在线托管(github), 有在线的持续集成(circleci)
+- 各行其是: reviewer 不应当需要本地起环境, QA 不应该坐在开发背后测试, 运维也不应该知道太多的代码细节
+- 开箱即用: 架构上的细节不应该暴露给开发者, 开发者只需要关心自己的代码
+
+## 特点
 
 - 功能驱动, 需求是开发的起点，先有需求再有功能分支（feature branch）或者补丁分支（fix branch）。完成开发后，该分支就合并到主分支，然后被删除。
 - 只存在一个主分支master
-- "上游优先原则", master是所有其他分支的"上游", 只有上游分支采纳的代码变化，才能应用到其他分支。
+- 每个分支有自己的测试服务器
+- 分支先验收再合并
 
-![gitlab flow](http://www.ruanyifeng.com/blogimg/asset/2015/bg2015122306.png)
+![workflow](http://luci.criosweb.ro/wp-content/uploads/2016/04/release-strategy.png)
 
-## Steps
+## 步骤
 
 ### Create Branch
 假如你现在要开发一个新需求/修复一个 bug, 你可能需要运行以下指令来在本地创建一个新分支:
@@ -35,6 +47,11 @@ gco -b feature/add-example-feature
 注: `gco` 相当于 `git checkout`, 如果使用的是自定义命令行工具 [oh-my-zsh](https://github.com/robbyrussell/oh-my-zsh), 就可以使用这些简写.  
 注: `git up` 相当于 `pull --rebase --autostash`, 出自一个小工具[git-up](https://github.com/aanand/git-up), 可以执行 `git config --global alias.up 'pull --rebase --autostash'` 来获得这个自定义指令.
 
+### Commits
+当你完成了一部分工作, 你可能需要先把一部分修改 commit 起来
+
+此时, [git-hooks](./git-hooks.md) 和 [lint](./lint.md) 会先帮助你修改一些简单的代码风格问题.
+
 ### Push Branch
 当你开发完成之后, 需要先确保当前分支同步了最新的 master 分支, 再同步到远端, 这样可以优先在本地解决冲突
 
@@ -43,6 +60,8 @@ git up
 git rebase master
 git push --set-upstream origin feature/add-example-feature
 ```
+
+在 push 之前, [git-hooks](./git-hooks.md) 和 test 会确保你本地测试可以通过.
 
 注: 很多时候不必要的冲突都是忘记前两步导致的
 
@@ -70,11 +89,6 @@ Code Review 就是让另一个程序员审查的你的代码, 检查功能是否
 
 ### Release
 当你合并了PR 之后, master 分支的代码和生产环境线上的版本就不一致了, 在需要的时候会进行发布.
+发布要利用`git tag`, 持续集成将把每个 tag 认为是一个要部署的版本
 
-master 分支应当通过 CI 持续部署在一个测试环境的服务器上, 在测试环境测试过新功能和旧功能不冲突之后, 就可以创建发布的 PR 了.
-如有冲突, 应当视为一个 bug , 从头开始走这个流程.
 
-如果有预发布环境(与 production 使用相同的后端和数据库), 那就创建从 master 向 pre-production 分支 merge 的 PR, 在预发布环境经过 QA 或者自己检验通过之后, 再创建从 pre-production 向 production 的 PR.
-如果没有预发布环境则省掉中间的 pre-production 的步骤
-
-注: 这里我们不使用 gitlab 推荐的 cherry-pick 的方式, 是因为用 github 的 PR 更方便, 还有多一层的 Review
