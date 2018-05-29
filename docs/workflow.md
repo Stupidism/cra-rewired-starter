@@ -25,6 +25,9 @@
 - 分支先验收再合并
 
 ![workflow](./workflow.png)
+
+这个图片本身也是有迹可循的: 可以再这里[编辑](https://creately.com/diagram/jhr2fza71/dSZPWtriIQXpRYynsPGagvTiVo%3D)
+
 ![branches](http://luci.criosweb.ro/wp-content/uploads/2016/04/release-strategy.png)
 
 ## 步骤
