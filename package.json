@@ -63,7 +63,7 @@
     "flow-bin": "^0.73.0",
     "gh-pages": "^1.1.0",
     "husky": "^0.14.3",
-    "lint-staged": "^7.1.0",
+    "lint-staged": "^8.1.0",
     "prettier": "^1.12.1",
     "react-app-rewire-less": "^2.1.1",
     "react-app-rewired": "^1.5.2",
