@@ -60,7 +60,7 @@
     "enzyme-adapter-react-16": "^1.1.1",
     "enzyme-shallow-until": "^1.0.1",
     "enzyme-to-json": "^3.3.3",
-    "flow-bin": "^0.73.0",
+    "flow-bin": "^0.90.0",
     "gh-pages": "^1.1.0",
     "husky": "^0.14.3",
     "lint-staged": "^7.1.0",
