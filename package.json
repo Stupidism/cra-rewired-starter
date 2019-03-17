@@ -13,7 +13,7 @@
     "react-router-dom": "^4.2.2",
     "recompose": "^0.27.0",
     "redux": "^4.0.0",
-    "redux-create-reducer": "^1.1.2",
+    "redux-create-reducer": "^2.0.0",
     "redux-thunk": "^2.2.0",
     "wretch": "^1.1.2"
   },
